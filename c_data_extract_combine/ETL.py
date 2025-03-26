@@ -14,7 +14,6 @@
 
 import pandas as pd
 import re
-import zipfile
 from geopy.geocoders import GoogleV3
 import nltk
 import spacy
@@ -74,13 +73,14 @@ def dataload():
     logger.info("Appending combined misinformation data to test data...")
     test_data_df = pd.concat([test_data_df,
                               comb_misinfo_df],
-                             ignore_index=True)
+                              ignore_index=True)
     logger.info("Dropping combined misinformation data from memory...")
     del comb_misinfo_df
     logger.info("Data loading completed.")
     return fake_df, true_df, test_data_df
 
 
+@log_function_call(logger)
 # Function to extract the location, source, and remove the text
 def extract_source_and_clean(text):
     # Define the regex pattern to match the source
@@ -99,6 +99,7 @@ def extract_source_and_clean(text):
         return '', text
 
 
+@log_function_call(logger)
 # Function to load and clean the data
 def data_pipeline(useprecombineddata=False, usepostnlpdata=False):
     logger.info("Starting data pipeline...")
@@ -291,71 +292,7 @@ def data_pipeline(useprecombineddata=False, usepostnlpdata=False):
     return combined_df
 
 
-# Generate Combined Data and save as a csv file
-useprecombineddata = False
-usepostnlpdata = True
-usesavedfile = False
-usegeoapi = False
-useworldcitiesdata = False
-findcommonthemes = False
-
-checkdirectory()
-
-logger.info("Starting data pipeline...")
-if usesavedfile is True:
-    try:
-        logger.info("Loading saved data...")
-        try:
-            combined_df = pd.read_csv('data/combined_data_step1.zip')
-        except (FileNotFoundError, ImportError):
-            logger.info("Saved data not found. Generating new data...")
-            combined_df = data_pipeline(useprecombineddata=True,
-                                        usepostnlpdata=True)
-    except Exception as e:
-        logger.error(f"Error loading saved data: {e}")
-        logger.info("Generating new data...")
-        combined_df = data_pipeline(useprecombineddata=True,
-                                    usepostnlpdata=False)
-else:
-    combined_df = data_pipeline(useprecombineddata, usepostnlpdata)
-
-# check for any blank values
-logger.debug(combined_df.isnull().sum())
-logger.debug(combined_df.head(5))
-# rename index to article_id if column article_id does not exist
-if 'article_id' not in combined_df.columns:
-    combined_df.index.name = 'index'
-    combined_df['article_id'] = combined_df.index
-# split locationsfromarticle into separate datafram
-# create a referenced list based of locationsfromarticle with an
-# entry for each location in the list
-# and a reference to the index of the article
-logger.info("Splitting locationsfromarticle into separate dataframe...")
-df_locations = combined_df[['article_id',
-                            'locationsfromarticle']].copy()
-logger.debug(df_locations.head(5))
-df_locations['locationsfromarticle'] = (
-    df_locations['locationsfromarticle'].apply(string_to_list))
-df_locations = (
-    df_locations.explode('locationsfromarticle')
-    .rename(columns={'locationsfromarticle': 'location'})
-)
-logger.debug(df_locations.head(10))
-# summarise the locationsfromarticle data by article_id and location adding
-# a count of the number of times the location appears in the article
-logger.info("Summarizing locationsfromarticle data...")
-df_locations_sum = (
-    df_locations.groupby(['article_id',
-                          'location'])
-    .size()
-    .reset_index(name='count'))
-logger.debug(df_locations_sum.head(10))
-# create a dataframe of unique locations
-df_unique_locations = (
-    pd.DataFrame({'location': df_locations['location'].unique()}))
-logger.debug(df_unique_locations.shape)
-
-
+@log_function_call(logger)
 def find_location_match(location, worldcities_df):
     """
     Search for a location in multiple columns of worldcities_df.
@@ -403,146 +340,63 @@ def find_location_match(location, worldcities_df):
     return None  # Return None if no match is found
 
 
-if usegeoapi:
-    logger.info("Using geolocation API...")
-    # generate a list of rows with missing data and without the ignore flag = 1
-    missing_geolocation_info = (
-        df_unique_locations[
-            df_unique_locations['geolocation_info'].isnull()
-        ].query('ignore != 1')
+# Extract continent, country, and state
+@log_function_call(logger)
+def extract_geolocation_details(df_unique_locations, worldcities_df):
+    """
+    Extract the continent, country, and state from an address.
+    merge the worldcities data with the unique
+    locations data on location to city
+     Drop the temporary 'geolocation_info' and 'address' columns
+     """
+    logger.info("Using worldcities data...")
+    # add a column which classifies the location
+    # as a city, country or other
+    zip_file_path = '2_source_data/simplemaps_worldcities_basicv1.77.zip'
+    with zipfile.ZipFile(zip_file_path, 'r') as z:
+        with z.open('worldcities.csv') as f:
+            worldcities_df = pd.read_csv(f)
+    print(worldcities_df.head(5))
+    # change city, city_ascii, country, iso2, iso3, admin_name to lowercase
+    worldcities_df['city'] = worldcities_df['city'].str.lower()
+    worldcities_df['city_ascii'] = worldcities_df['city_ascii'].str.lower()
+    worldcities_df['country'] = worldcities_df['country'].str.lower()
+    worldcities_df['iso2'] = worldcities_df['iso2'].str.lower()
+    worldcities_df['iso3'] = worldcities_df['iso3'].str.lower()
+    worldcities_df['admin_name'] = worldcities_df['admin_name'].str.lower()
+    print(worldcities_df.head(5))
+    # change the location column to lowercase
+    df_unique_locations['location'] = (
+        df_unique_locations['location'].str.lower())
+    # update unique_locations country, state, city, latitude, longitude
+    # with the information from worldcities data
+    df_unique_locations['geolocation_info'] = (
+        df_unique_locations['location']
+        .apply(lambda x: find_location_match(x, worldcities_df))
         )
-    # check the number of missing geolocation_info
-    print(missing_geolocation_info.shape)
-    # Apply geolocation info extraction
-    missing_geolocation_info['geolocation_info'] = (
-        missing_geolocation_info['location']
-        .apply(get_geolocation_info))
     # Extract latitude, longitude, and address
-    missing_geolocation_info['latitude'] = (
-        missing_geolocation_info['geolocation_info']
-        .apply(lambda x: x['latitude']))
-    missing_geolocation_info['longitude'] = (
-        missing_geolocation_info['geolocation_info']
-        .apply(lambda x: x['longitude']))
-    missing_geolocation_info['address'] = (
-        missing_geolocation_info['geolocation_info']
-        .apply(lambda x: x['address']))
-    # Extract continent, country, and state
-    missing_geolocation_info[['continent', 'country', 'state']] = (
-        missing_geolocation_info['address'].apply(
-            lambda x: pd.Series(extract_geolocation_details(x))
-            ))
-else:
-    if useworldcitiesdata:
-        logger.info("Using worldcities data...")
-        # add a column which classifies the location
-        # as a city, country or other
-        zip_file_path = '2_source_data/simplemaps_worldcities_basicv1.77.zip'
-        with zipfile.ZipFile(zip_file_path, 'r') as z:
-            with z.open('worldcities.csv') as f:
-                worldcities_df = pd.read_csv(f)
-        print(worldcities_df.head(5))
-        # change city, city_ascii, country, iso2, iso3, admin_name to lowercase
-        worldcities_df['city'] = worldcities_df['city'].str.lower()
-        worldcities_df['city_ascii'] = worldcities_df['city_ascii'].str.lower()
-        worldcities_df['country'] = worldcities_df['country'].str.lower()
-        worldcities_df['iso2'] = worldcities_df['iso2'].str.lower()
-        worldcities_df['iso3'] = worldcities_df['iso3'].str.lower()
-        worldcities_df['admin_name'] = worldcities_df['admin_name'].str.lower()
-        print(worldcities_df.head(5))
-        # change the location column to lowercase
-        df_unique_locations['location'] = (
-            df_unique_locations['location'].str.lower())
-        # update unique_locations country, state, city, latitude, longitude
-        # with the information from worldcities data
-        df_unique_locations['geolocation_info'] = (
-            df_unique_locations['location']
-            .apply(lambda x: find_location_match(x, worldcities_df))
-            )
-        # Extract latitude, longitude, and address
-        df_unique_locations['latitude'] = (
-            df_unique_locations['geolocation_info']
-            .apply(lambda x: x['latitude'] if x else None))
-        df_unique_locations['longitude'] = (
-            df_unique_locations['geolocation_info']
-            .apply(lambda x: x['longitude'] if x else None))
-        df_unique_locations['address'] = (
-            df_unique_locations['geolocation_info']
-            .apply(lambda x: x['matched_value'] if x else None))
-        # Extract continent, country, and state
+    df_unique_locations['latitude'] = (
+        df_unique_locations['geolocation_info']
+        .apply(lambda x: x['latitude'] if x else None))
+    df_unique_locations['longitude'] = (
+        df_unique_locations['geolocation_info']
+        .apply(lambda x: x['longitude'] if x else None))
+    df_unique_locations['address'] = (
+        df_unique_locations['geolocation_info']
+        .apply(lambda x: x['matched_value'] if x else None))
+    df_unique_locations.drop(columns=['geolocation_info', 'address'],
+                                inplace=True)
+    # update df_locations with the information from df_unique_locations
+    df_locations = pd.merge(df_locations,
+                            df_unique_locations,
+                            on='location',
+                            how='left')
+    save the locationsfromarticle data to a csv file
 
-        # merge the worldcities data with the unique
-        # locations data on location to city
-        # # Drop the temporary 'geolocation_info' and 'address' columns
-        # df_unique_locations.drop(columns=['geolocation_info', 'address'],
-        #                          inplace=True)
-        # # update df_locations with the information from df_unique_locations
-        # df_locations = pd.merge(df_locations,
-        #                         df_unique_locations,
-        #                         on='location',
-        #                         how='left')
-        # save the locationsfromarticle data to a csv file
-
-        # save_dataframe_to_zip(df_locations,
-        #                     'data/locationsfromarticle.zip',
-        #                     'locationsfromarticle.csv')
-        # # save the unique locations data to a csv file
-        # save_dataframe_to_zip(df_unique_locations,
-        #                     'data/unique_locations.zip',
-        #                     'unique_locations.csv')
-
-
-logger.info("Data pipeline completed.")
-logger.info("Data cleaning and feature extraction completed.")
-
-if findcommonthemes:
-    logger.info("Finding common themes")
-    # using NLP produce a li    st of common themes
-    # create a list of common themes
-    common_themes = []
-    # iterate over the nlp_text column
-    for text in combined_df['nlp_text']:
-        # create a doc object
-        doc = nlp(text)
-        # iterate over the entities in the doc
-        for ent in doc.ents:
-            # if the entity is a common noun
-            if ent.label_ == 'NOUN':
-                # append the entity to the common_themes list
-                common_themes.append(ent.text)
-    # create a dataframe of common themes
-    df_common_themes = pd.DataFrame(common_themes, columns=['theme'])
-    # create a count of the number of times each theme appears
-    df_common_themes = df_common_themes['theme'].value_counts().reset_index()
-    # rename the columns
-    df_common_themes.columns = ['theme', 'count']
-    # save the common themes data to a csv file
-    save_dataframe_to_zip(df_common_themes,
-                          'data/common_themes.zip',
-                          'common_themes.csv')
-
-
-# if no blank or null values in title, article_text, date, label,
-# subject then export to csv
-# set month, day and year for null values based off date_clean
-
-
-# drop unnecessary columns
-combined_df.drop(['article_text',
-                  'subject',
-                  ], axis=1, inplace=True)
-
-
-if combined_df.isnull().sum().sum() == 0:
-    logger.info("No missing values in the data")
-    save_dataframe_to_zip(combined_df,
-                          'data/combined_data.zip',
-                          'combined_data.csv')
-    logger.info("Data cleaned and saved as combined_data.csv in data folder")
-else:
-    logger.info("There are still missing values in the data")
-    save_dataframe_to_zip(combined_df,
-                          'data/combined_data.zip',
-                          'combined_data.csv')
-    logger.info("Data cleaned and saved as combined_data.csv in data folder")
-    logger.info("Data cleaning and feature extraction completed.")
+    save_dataframe_to_zip(df_locations,
+                        'data/locationsfromarticle.zip',
+                        'locationsfromarticle.csv')
+    # save the unique locations data to a csv file
+    save_dataframe_to_zip(df_unique_locations,
+                        'data/unique_locations.zip',
+                        'unique_locations.csv')

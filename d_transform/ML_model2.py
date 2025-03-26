@@ -3,12 +3,13 @@ import json
 import os
 import joblib
 import pandas as pd
+from sl_utils.logger import datapipeline_logger as logger, log_function_call
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import classification_report, confusion_matrix, mean_squared_error
 from sklearn.model_selection import train_test_split
 
-
+@log_function_call(logger)
 def load_data(path: str) -> pd.DataFrame:
     df = pd.read_csv(path)
     df.dropna(subset=["cleaned_text", "label"], inplace=True)  # Ensure required columns are present
@@ -21,7 +22,7 @@ def adjust_realness_score(df: pd.DataFrame) -> pd.DataFrame:
     df["realness_score"] = df["label"].map({0: 1, 1: 5})
     return df
 
-
+@log_function_call(logger)
 def create_vectorizer(text_series: pd.Series) -> TfidfVectorizer:
     vectorizer = TfidfVectorizer(max_features=1000, stop_words="english")
     vectorizer.fit(text_series)
@@ -31,7 +32,7 @@ def create_vectorizer(text_series: pd.Series) -> TfidfVectorizer:
 def vectorize_text(vectorizer: TfidfVectorizer, text_series: pd.Series):
     return vectorizer.transform(text_series)
 
-
+@log_function_call(logger)
 def train_model(X, y, model_type: str):
     if model_type == "classification":
         model = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -40,7 +41,7 @@ def train_model(X, y, model_type: str):
     model.fit(X, y)
     return model
 
-
+@log_function_call(logger)
 def evaluate_model(model, X_test, y_test, model_type: str) -> dict:
     y_pred = model.predict(X_test)
 
@@ -54,7 +55,7 @@ def evaluate_model(model, X_test, y_test, model_type: str) -> dict:
         return {"Mean Squared Error": mse,
                 "Predictions": y_pred.tolist()}
 
-
+@log_function_call(logger)
 def save_artifacts(model,
                    vectorizer,
                    model_type: str,
@@ -64,7 +65,7 @@ def save_artifacts(model,
     joblib.dump(vectorizer, f"{output_dir}/vectorizer_{model_type}.pkl")
     print(f"[✓] Saved model and vectorizer for '{model_type}' in {output_dir}")
 
-
+@log_function_call(logger)
 def run_pipeline(data_path: str, model_type: str = "regression"):
     assert model_type in ("classification",
                           "regression"), "Invalid model type."
@@ -94,7 +95,7 @@ def run_pipeline(data_path: str, model_type: str = "regression"):
     save_evaluation_reports(evaluation, model_type, output_dir="ML_model2_models")
     save_artifacts(model, vectorizer, model_type=model_type, output_dir="ML_model2_models")
 
-
+@log_function_call(logger)
 def save_evaluation_reports(evaluation, model_type: str, output_dir: str):
     os.makedirs(output_dir, exist_ok=True)
 
