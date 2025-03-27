@@ -1,0 +1,43 @@
+2025/03/27 06:43 ERROR:Error in enrich_unique_locations: Missing expected columns in worldcities_df: ['code2', 'code3']
+Traceback (most recent call last):
+  File "h:\VScode\ROD_data_preparation\sl_utils\logger.py", line 63, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\sl_utils\geo_utils.py", line 125, in enrich_unique_locations
+    raise ValueError(f"Missing expected columns in worldcities_df: {missing}")
+ValueError: Missing expected columns in worldcities_df: ['code2', 'code3']
+2025/03/27 06:43 ERROR:Error in generate_unique_loc: Missing expected columns in worldcities_df: ['code2', 'code3']
+Traceback (most recent call last):
+  File "h:\VScode\ROD_data_preparation\sl_utils\logger.py", line 63, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\c_data_extract_combine\ETL.py", line 449, in generate_unique_loc
+    df_unique_locations = enrich_unique_locations(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\sl_utils\logger.py", line 63, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\sl_utils\geo_utils.py", line 125, in enrich_unique_locations
+    raise ValueError(f"Missing expected columns in worldcities_df: {missing}")
+ValueError: Missing expected columns in worldcities_df: ['code2', 'code3']
+2025/03/27 06:43 ERROR:Error in data_pipeline: Missing expected columns in worldcities_df: ['code2', 'code3']
+Traceback (most recent call last):
+  File "h:\VScode\ROD_data_preparation\sl_utils\logger.py", line 63, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\c_data_extract_combine\ETL.py", line 329, in data_pipeline
+    df_unique_locations) = generate_unique_loc(combined_df,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\sl_utils\logger.py", line 63, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\c_data_extract_combine\ETL.py", line 449, in generate_unique_loc
+    df_unique_locations = enrich_unique_locations(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\sl_utils\logger.py", line 63, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "h:\VScode\ROD_data_preparation\sl_utils\geo_utils.py", line 125, in enrich_unique_locations
+    raise ValueError(f"Missing expected columns in worldcities_df: {missing}")
+ValueError: Missing expected columns in worldcities_df: ['code2', 'code3']
+2025/03/27 06:56 ERROR:Pre location enriched data not found. Generating new data...

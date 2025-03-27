@@ -1,11 +1,9 @@
 import subprocess
 import os
-import streamlit as st
 from sl_utils.logger import log_function_call, streamlit_logger
 
 
 @log_function_call(streamlit_logger)
-@st.cache_data
 def get_git_version(module_path=None):
     """Get the version based on Git commits and merges.
 

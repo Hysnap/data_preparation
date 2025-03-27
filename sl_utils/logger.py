@@ -40,7 +40,7 @@ streamlit_logger.addHandler(streamlit_console_handler)
 datapipeline_logger = logging.getLogger("DataPipeline")
 datapipeline_logger.setLevel(getattr(logging, LOG_LEVEL, logging.INFO))
 
-datapipeline_file_handler = logging.FileHandler("z_logs/data_pipeline.log",
+datapipeline_file_handler = logging.FileHandler("sl_logs/data_pipeline.log",
                                                 encoding="utf-8")
 datapipeline_console_handler = logging.StreamHandler(sys.stdout)
 

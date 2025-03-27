@@ -1,46 +1,58 @@
-# Description: This script loads the data from the csv files, cleans the data,
-# extracts the location, source, and removes the text, performs sentiment analysis,
-# calculates contradictions and variations, categorizes sentiments, appends NLP locations
-# to text, extracts locations from articles, and saves the combined data to a csv file.
-# The script also extracts the location, source, and removes the text, splits the locationsfromarticle
-# into a separate dataframe, summarizes the locationsfromarticle data by article_id and location,
-# creates a dataframe of unique locations, and filters out locations marked to ignore.
-# The script also extracts latitude, longitude, and address, extracts continent, country, and state,
-# searches for a location in multiple columns of worldcities_df, and saves the common themes data to a csv file.
-# The script also generates a list of common themes, creates a dataframe of common themes, and saves the common themes data to a csv file.
-# The script also drops unnecessary columns, drops rows with empty cleaned_text, and exports the data to a csv file.
-# The script also sets month, day, and year for null values based off date_clean, and exports the data to a csv file.
-# The script also drops unnecessary columns, and exports the data to a csv file.
+"""
+Description: This script loads the data from the csv files, cleans the data,
+extracts the location, source, and removes the text,
+performs sentiment analysis,
+calculates contradictions and variations, categorizes sentiments,
+appends NLP locations
+to text, extracts locations from articles, and saves the
+combined data to a csv file.
+The script also extracts the location, source, and removes the text,
+splits the locationsfromarticle
+into a separate dataframe, summarizes the locationsfromarticle
+data by article_id and location,
+creates a dataframe of unique locations, and filters out
+locations marked to ignore.
+The script also extracts latitude, longitude, and address,
+extracts continent, country, and state,
+searches for a location in multiple columns of worldcities_df,
+and saves the common themes data to a csv file.
+The script also generates a list of common themes, creates a
+dataframe of common themes, and saves the common themes data to a csv file.
+The script also drops unnecessary columns, drops rows with
+empty cleaned_text, and exports the data to a csv file.
+The script also sets month, day, and year for null values
+based off date_clean, and exports the data to a csv file.
+The script also drops unnecessary columns, and exports the
+data to a csv file.
+"""
 
 import pandas as pd
 import re
-from geopy.geocoders import GoogleV3
 import nltk
 import spacy
-import os
-import tqdm
-import zipfile
-from flashtext import KeywordProcessor
-from sl_utils.logger import datapipeline_logger as logger
-from sl_utils.logger import log_function_call
+from tqdm.auto import tqdm
+from sl_utils.logger import datapipeline_logger as logger, log_function_call
 from sl_utils.utils import (
-    checkdirectory,
     save_dataframe_to_zip,
     separate_string,
     clean_text,
     get_sentiment,
     categorize_polarity,
     categorize_subjectivity,
-    string_to_list,
-    get_geolocation_info,
-    extract_geolocation_details,
-    extract_locations,
+    string_to_list
                             )
 from c_data_extract_combine.TRANSFORM import classify_and_combine
-
+from sl_utils.geo_utils import (
+    build_world_location_set,
+    init_keyword_processor,
+    extract_locations_column,
+    enrich_unique_locations,
+    get_geolocation_info,
+    extract_geolocation_details
+)
 
 # attach tqdm to pandas
-tqdm.pandas
+tqdm.pandas()
 
 # Download necessary NLTK resources (if you haven't already)
 nltk.download('stopwords')
@@ -49,32 +61,22 @@ nltk.download('wordnet')
 # Load the spaCy model
 nlp = spacy.load("en_core_web_sm")
 
-# Initialize the geolocator
-# Load the API key from an environment variable
-api_key = os.getenv("GOOGLE_API_KEY")
-
-if not api_key:
-    raise RuntimeError("Google API key not found. Please set "
-                       "the GOOGLE_API_KEY environment variable.")
-
-geolocator = GoogleV3(api_key=api_key)
-
 
 @log_function_call(logger)
 # load the data from the csv files
 def dataload():
     logger.info("Loading fake news data...")
-    fake_df = pd.read_csv("2_source_data/fake.csv.zip")
+    fake_df = pd.read_csv("b_source_data/fake.csv.zip")
     logger.info("Loading true news data...")
-    true_df = pd.read_csv("2_source_data/true.csv.zip")
+    true_df = pd.read_csv("b_source_data/true.csv.zip")
     logger.info("Loading test data...")
-    test_data_df = pd.read_csv("2_source_data/testdata.csv.zip")
+    test_data_df = pd.read_csv("b_source_data/testdata.csv.zip")
     logger.info("Loading combined misinformation data...")
-    comb_misinfo_df = pd.read_csv("2_source_data/combined_misinfo.zip")
+    comb_misinfo_df = pd.read_csv("b_source_data/combined_misinfo.zip")
     logger.info("Appending combined misinformation data to test data...")
     test_data_df = pd.concat([test_data_df,
                               comb_misinfo_df],
-                              ignore_index=True)
+                             ignore_index=True)
     logger.info("Dropping combined misinformation data from memory...")
     del comb_misinfo_df
     logger.info("Data loading completed.")
@@ -102,20 +104,35 @@ def extract_source_and_clean(text):
 
 @log_function_call(logger)
 # Function to load and clean the data
-def data_pipeline(useprecombineddata=False, usepostnlpdata=False):
+def data_pipeline(useprecombineddata=False,
+                  usepostnlpdata=False,
+                  useprelocationdata=False,
+                  useprelocationenricheddata=False):
     logger.info("Starting data pipeline...")
-    if usepostnlpdata is True:
+    if useprelocationenricheddata is True:
+        useprelocationdata = True
         useprecombineddata = True
+        usepostnlpdata = True
+    elif useprelocationdata is True:
+        useprecombineddata = True
+        usepostnlpdata = True
+    elif usepostnlpdata is True:
+        useprecombineddata = True
+        useprelocationdata = False
     # Pipeline to transform the data
-    if useprecombineddata is False:
+    elif useprecombineddata is False:
         logger.info("Loading data...")
         fake_df, true_df, test_data_df = dataload()
+    else:
+        logger.error("Invalid data pipeline configuration.")
+        return
 
     if usepostnlpdata is False:
         logger.info("Cleaning data...")
         logger.info("Combining dataframes...")
         if useprecombineddata:
-            combined_df = pd.read_csv('data/combined_pre_clean.zip')
+            combined_df = pd.read_csv('data/combined_pre_clean.zip',
+                                      low_memory=False)
         else:
             combined_df = classify_and_combine(true_df, fake_df, test_data_df)
         logger.info(combined_df.info())
@@ -171,10 +188,11 @@ def data_pipeline(useprecombineddata=False, usepostnlpdata=False):
         logger.info("Saving post NLP data to CSV...")
         save_dataframe_to_zip(combined_df,  'data/combined_data_postnlp.zip',
                               'combined_data_postnlp.csv')
-    else:
+    elif usepostnlpdata is True:
         try:
             logger.info("Loading post nlp data...")
-            combined_df = pd.read_csv('data/combined_data_postnlp.zip')
+            combined_df = pd.read_csv('data/combined_data_postnlp.zip',
+                                      low_memory=False)
 
             # Check data has loaded correctly
             logger.info(combined_df.info())
@@ -191,78 +209,141 @@ def data_pipeline(useprecombineddata=False, usepostnlpdata=False):
             logger.error("Post NLP data not found. Generating new data...")
             usepostnlpdata = False
             combined_df = data_pipeline()
+    else:
+        logger.error("Invalid data pipeline configuration.")
+        return
 
-    logger.info("Performing sentiment analysis...")
-    combined_df[['article_polarity', 'article_subjectivity']] = (
-        combined_df['nlp_text'].apply(
-            lambda x: pd.Series(get_sentiment(x))
-            ))
-    combined_df[['title_polarity', 'title_subjectivity']] = (
-        combined_df['nlp_title'].apply(
-            lambda x: pd.Series(get_sentiment(x))
-            ))
-    combined_df['overall_polarity'] = (
-        (combined_df['article_polarity'] + combined_df['title_polarity']) / 2)
-    combined_df['overall_subjectivity'] = (
-        (combined_df['article_subjectivity'] +
-         combined_df['title_subjectivity']) / 2)
+    if useprelocationdata is False:
+        logger.info("Performing sentiment analysis...")
+        combined_df[['article_polarity', 'article_subjectivity']] = (
+            combined_df['nlp_text'].apply(
+                lambda x: pd.Series(get_sentiment(x))
+                ))
+        combined_df[['title_polarity', 'title_subjectivity']] = (
+            combined_df['nlp_title'].apply(
+                lambda x: pd.Series(get_sentiment(x))
+                ))
+        combined_df['overall_polarity'] = (
+            (combined_df['article_polarity'] +
+             combined_df['title_polarity']) / 2)
+        combined_df['overall_subjectivity'] = (
+            (combined_df['article_subjectivity'] +
+             combined_df['title_subjectivity']) / 2)
+        logger.info("Calculating contradictions and variations...")
+        combined_df['contradiction_polarity'] = (
+            combined_df['article_polarity'] - combined_df['title_polarity'])
+        combined_df['contradiction_subjectivity'] = (
+            combined_df['article_subjectivity'] -
+            combined_df['title_subjectivity'])
+        combined_df['polarity_variations'] = combined_df.apply(
+            lambda row: row['contradiction_polarity'] / row['title_polarity']
+            if row['title_polarity'] != 0 else 0, axis=1)
+        combined_df['subjectivity_variations'] = (combined_df.apply(
+            lambda row: row['contradiction_subjectivity'] /
+            row['title_subjectivity']
+            if row['title_subjectivity'] != 0 else 0, axis=1))
+        logger.info("Categorizing sentiments...")
+        combined_df['sentiment_article'] = (
+            combined_df['article_polarity'].apply(categorize_polarity) +
+            " " + combined_df['article_subjectivity'].
+            apply(categorize_subjectivity))
+        combined_df['sentiment_title'] = (
+            combined_df['title_polarity'].apply(categorize_polarity) +
+            " " + combined_df['title_subjectivity'].apply(
+                categorize_subjectivity))
+        combined_df['sentiment_overall'] = (
+            combined_df['overall_polarity'].apply(categorize_polarity) +
+            " " + combined_df['overall_subjectivity'].
+            apply(categorize_subjectivity))
+        logger.info("Appending NLP locations to text...")
+        combined_df['nlp_textloc'] = (
+            combined_df['nlp_text'] + ' '
+            + combined_df['nlp_location'].apply(lambda x: ' '.join(x)))
+        # use savetozip function to save the combined data to a zip file
+        logger.info("Saving combined data to CSV...")
+        save_dataframe_to_zip(combined_df,
+                              'data/combined_data_pre_location.zip',
+                              'combined_data_pre_location.csv')
+    elif useprelocationdata is True:
+        if useprelocationenricheddata is True:
+            try:
+                logger.info("Loading pre location enriched data...")
+                combined_df = pd.read_csv(
+                    'data/combined_data_pre_location_enriched.zip',
+                    low_memory=False)
 
-    logger.info("Calculating contradictions and variations...")
-    combined_df['contradiction_polarity'] = (
-        combined_df['article_polarity'] - combined_df['title_polarity'])
-    combined_df['contradiction_subjectivity'] = (
-        combined_df['article_subjectivity'] -
-        combined_df['title_subjectivity'])
-    combined_df['polarity_variations'] = combined_df.apply(
-        lambda row: row['contradiction_polarity'] / row['title_polarity']
-        if row['title_polarity'] != 0 else 0, axis=1)
-    combined_df['subjectivity_variations'] = (combined_df.apply(
-        lambda row: row['contradiction_subjectivity'] /
-        row['title_subjectivity']
-        if row['title_subjectivity'] != 0 else 0, axis=1))
+                # Check data has loaded correctly
+                logger.info(combined_df.info())
+                logger.info("Checking for duplicated columns...")
+                logger.info("Duplicated columns:"
+                            f" {combined_df.columns[combined_df.
+                                columns.duplicated()]}")
+                logger.info("Resetting index...")
+                combined_df.reset_index(drop=True, inplace=True)
+                logger.info("Renaming index to article_id...")
+                combined_df['article_id'] = combined_df.index
+                combined_df.index.name = 'index'
+            except (FileNotFoundError, ImportError):
+                logger.error("Pre location enriched data not"
+                             " found. Generating new data...")
+                useprelocationenricheddata = False
+        try:
+            logger.info("Loading pre location data...")
+            combined_df = pd.read_csv(
+                'data/combined_data_pre_location.zip',
+                low_memory=False)
 
-    logger.info("Categorizing sentiments...")
-    combined_df['sentiment_article'] = (
-        combined_df['article_polarity'].apply(categorize_polarity) +
-        " " + combined_df['article_subjectivity'].
-        apply(categorize_subjectivity))
-    combined_df['sentiment_title'] = (
-        combined_df['title_polarity'].apply(categorize_polarity) +
-        " " + combined_df['title_subjectivity'].apply(categorize_subjectivity))
-    combined_df['sentiment_overall'] = (
-        combined_df['overall_polarity'].apply(categorize_polarity) +
-        " " + combined_df['overall_subjectivity'].
-        apply(categorize_subjectivity))
+            # Check data has loaded correctly
+            logger.info(combined_df.info())
+            logger.info("Checking for duplicated columns...")
+            logger.info("Duplicated columns:"
+                        f" {combined_df.columns[combined_df.
+                            columns.duplicated()]}")
+            logger.info("Resetting index...")
+            combined_df.reset_index(drop=True, inplace=True)
+            logger.info("Renaming index to article_id...")
+            combined_df['article_id'] = combined_df.index
+            combined_df.index.name = 'index'
+        except (FileNotFoundError, ImportError):
+            logger.error("Pre location data not found. Generating new data...")
+            useprelocationdata = False
+            combined_df = data_pipeline()
+    else:
+        logger.error("Invalid data pipeline configuration.")
 
-    logger.info("Appending NLP locations to text...")
-    combined_df['nlp_textloc'] = (
-        combined_df['nlp_text'] + ' '
-        + combined_df['nlp_location'].apply(lambda x: ' '.join(x)))
+    # use generate_unique_loc function to split locationsfromarticle
+    # into separate dataframe
+    # create a referenced list based of locationsfromarticle with an entry
+    # for each location in the list
+    # and a reference to the index of the article
+    # Load geo datasets
+    worldcities_df = (
+        pd.read_csv("b_source_data/simplemaps_worldcities_basicv1.77.zip"))
+    usstates_df = pd.read_csv("b_source_data/USStates.csv")
+    countrycontinent_df = pd.read_csv("b_source_data/countryContinent.csv")
 
-    # Load NLP model globally to avoid repeated loading
-    nlp = spacy.load("en_core_web_sm")
+    # Generate unique location data
+    logger.info("Generating unique location data...")
+    (df_locations,
+     df_locations_sum,
+     df_unique_locations) = generate_unique_loc(combined_df,
+                                                worldcities_df,
+                                                usstates_df,
+                                                countrycontinent_df,
+                                                useprelocationenricheddata
+                                                )
 
-    # Load unique locations dataset once
-    df_unique_locations = pd.read_csv("data/unique_locations.csv")
+    # save the unique locations data to a csv file
+    logger.info("Saving unique locations data to CSV...")
+    save_dataframe_to_zip(df_unique_locations,
+                          'data/unique_locations.zip',
+                          'unique_locations.csv')
 
-    # Filter out locations marked to ignore
-    df_unique_locations = (
-        df_unique_locations[df_unique_locations["ignore"] != 1])
-
-    # Convert locations to a set for fast lookup
-    unique_locations_set = set(df_unique_locations["location"].str.lower())
-
-    # Initialize FlashText KeywordProcessor for fast extraction
-    keyword_processor = KeywordProcessor()
-    for loc in unique_locations_set:
-        keyword_processor.add_keyword(loc)
-    # use nlp to extract locations from the text
-
-    logger.info("Extracting locations from articles...")
-    combined_df['locationsfromarticle'] = (
-        combined_df['nlp_textloc']
-        .progressapply(extract_locations(keyword_processor,
-                                         nlp)))
+    # save the locationsfromarticle data to a csv file
+    logger.info("Saving locations from article data to CSV...")
+    save_dataframe_to_zip(df_locations,
+                          'data/locations_from_article.zip',
+                          'locations_from_article.csv')
 
     logger.info("Saving combined data post location to CSV...")
     save_dataframe_to_zip(combined_df,
@@ -294,110 +375,106 @@ def data_pipeline(useprecombineddata=False, usepostnlpdata=False):
 
 
 @log_function_call(logger)
-def find_location_match(location, worldcities_df):
-    """
-    Search for a location in multiple columns of worldcities_df.
+def generate_unique_loc(combined_df,
+                        worldcities_df,
+                        usstates_df,
+                        countrycontinent_df,
+                        usegeoapi=False,
+                        useprelocationenricheddata=False):
+    logger.info("Generating location insights from articles...")
 
-    Args:
-        location (str): The location to search for.
-        worldcities_df (DataFrame): The dataframe containing city data.
+    logger.info("Not Loading pre location enriched data...")
+    # Build location keyword set and keyword processor
+    location_set = build_world_location_set(worldcities_df,
+                                            usstates_df,
+                                            countrycontinent_df
+                                            )
+    keyword_processor = init_keyword_processor(location_set)
 
-    Returns:
-        dict: A dictionary containing the matched value, the column it was
-        found in, latitude, longitude, and country.
-              Returns None if no match is found.
+    # Extract locations using NLP + FlashText
+    if useprelocationenricheddata:
+        logger.info("Loading pre location enriched data...")
+        try:
+            combined_df = (
+                pd.read_csv('data/combined_data_pre_location_enriched.zip',
+                            low_memory=False))
+        except (FileNotFoundError, ImportError):
+            logger.error("Pre location enriched data not found."
+                         " Generating new data...")
+            combined_df = extract_locations_column(
+                combined_df,
+                'nlp_textloc',
+                keyword_processor,
+                nlp=nlp,
+                )
+    else:
+        combined_df = extract_locations_column(
+            combined_df,
+            'nlp_textloc',
+            keyword_processor,
+            nlp=nlp,
+            )
 
-    Example usage:
-        location_to_search = "New York"
-        result = find_location_match(location_to_search, worldcities_df)
-        if result:
-            print("Match found:", result)
-        else:
-            print("No match found.")
-    """
-    search_columns = ['city', 'city_ascii', 'country',
-                      'iso2', 'iso3', 'admin_name']
+    # Create exploded location mapping
+    df_locations = combined_df[['article_id', 'locationsfromarticle']].copy()
+    df_locations['locationsfromarticle'] = (
+        df_locations['locationsfromarticle'].apply(string_to_list))
+    df_locations = (
+        df_locations.explode('locationsfromarticle').rename(
+            columns={'locationsfromarticle': 'location'}))
 
-    # Convert input to string and lowercase for case-insensitive comparison
-    location = str(location).strip().lower()
+    # Summarize location frequency per article
+    df_locations_sum = (
+        df_locations.groupby(['article_id', 'location'])
+        .size()
+        .reset_index(name='count')
+    )
 
-    for col in search_columns:
-        # Find rows where the location matches the column
-        match = worldcities_df[worldcities_df[col]
-                               .astype(str)
-                               .str.strip()
-                               .str.lower() == location]
+    # Build unique location list and assign ignore flag
+    unique_locations_df = (
+        pd.DataFrame({'location': df_locations['location'].dropna().unique()}))
+    known_cities = (
+        worldcities_df['city_ascii'].str.lower().dropna().unique())
+    unique_locations_df['ignore'] = (
+        unique_locations_df['location'].apply(
+            lambda x: 0 if x in known_cities else 1
+        ))
 
-        if not match.empty:
-            # Extract the first match found
-            result = {
-                'matched_value': match.iloc[0][col],
-                'matched_column': col,
-                'latitude': match.iloc[0]['lat'],
-                'longitude': match.iloc[0]['lng'],
-                'country': match.iloc[0]['country']
-            }
-            return result
-    return None  # Return None if no match is found
+    # save file before enriching
+    save_dataframe_to_zip(combined_df,
+                          'data/ccombined_data_pre_location_enriched.zip',
+                          'combined_data_pre_location_enriched.csv')
 
+    # Enrich location data from city/state/country lookups
+    df_unique_locations = enrich_unique_locations(
+        unique_locations_df,
+        worldcities_df,
+        usstates_df,
+        countrycontinent_df
+    )
 
-# Extract continent, country, and state
-@log_function_call(logger)
-def extract_geolocation_details(df_unique_locations, worldcities_df):
-    """
-    Extract the continent, country, and state from an address.
-    merge the worldcities data with the unique
-    locations data on location to city
-     Drop the temporary 'geolocation_info' and 'address' columns
-     """
-    logger.info("Using worldcities data...")
-    # add a column which classifies the location
-    # as a city, country or other
-    zip_file_path = '2_source_data/simplemaps_worldcities_basicv1.77.zip'
-    with zipfile.ZipFile(zip_file_path, 'r') as z:
-        with z.open('worldcities.csv') as f:
-            worldcities_df = pd.read_csv(f)
-    print(worldcities_df.head(5))
-    # change city, city_ascii, country, iso2, iso3, admin_name to lowercase
-    worldcities_df['city'] = worldcities_df['city'].str.lower()
-    worldcities_df['city_ascii'] = worldcities_df['city_ascii'].str.lower()
-    worldcities_df['country'] = worldcities_df['country'].str.lower()
-    worldcities_df['iso2'] = worldcities_df['iso2'].str.lower()
-    worldcities_df['iso3'] = worldcities_df['iso3'].str.lower()
-    worldcities_df['admin_name'] = worldcities_df['admin_name'].str.lower()
-    print(worldcities_df.head(5))
-    # change the location column to lowercase
-    df_unique_locations['location'] = (
-        df_unique_locations['location'].str.lower())
-    # update unique_locations country, state, city, latitude, longitude
-    # with the information from worldcities data
-    df_unique_locations['geolocation_info'] = (
-        df_unique_locations['location']
-        .apply(lambda x: find_location_match(x, worldcities_df))
-        )
-    # Extract latitude, longitude, and address
-    df_unique_locations['latitude'] = (
-        df_unique_locations['geolocation_info']
-        .apply(lambda x: x['latitude'] if x else None))
-    df_unique_locations['longitude'] = (
-        df_unique_locations['geolocation_info']
-        .apply(lambda x: x['longitude'] if x else None))
-    df_unique_locations['address'] = (
-        df_unique_locations['geolocation_info']
-        .apply(lambda x: x['matched_value'] if x else None))
-    df_unique_locations.drop(columns=['geolocation_info', 'address'],
-                                inplace=True)
-    # update df_locations with the information from df_unique_locations
-    df_locations = pd.merge(df_locations,
-                            df_unique_locations,
-                            on='location',
-                            how='left')
-    # save the locationsfromarticle data to a csv file
+    # Fallback to API geolocation for unknowns
+    if usegeoapi:
+        missing = df_unique_locations[
+            df_unique_locations['latitude'].isnull() &
+            (df_unique_locations['ignore'] != 1)
+        ].copy()
 
-    save_dataframe_to_zip(df_locations,
-                        'data/locationsfromarticle.zip',
-                        'locationsfromarticle.csv')
-    # save the unique locations data to a csv file
-    save_dataframe_to_zip(df_unique_locations,
-                        'data/unique_locations.zip',
-                        'unique_locations.csv')
+        if not missing.empty:
+            logger.info(f"Using geolocation API for {len(missing)} "
+                        "unmatched locations...")
+            missing['geolocation_info'] = (
+                missing['location'].apply(get_geolocation_info))
+            missing['latitude'] = (
+                missing['geolocation_info'].apply(lambda x: x['latitude']))
+            missing['longitude'] = (
+                missing['geolocation_info'].apply(lambda x: x['longitude']))
+            missing['address'] = (
+                missing['geolocation_info'].apply(lambda x: x['address']))
+            missing[['continent', 'country', 'state']] = (
+                missing['address'].apply(
+                    lambda x: pd.Series(extract_geolocation_details(x))
+                    ))
+            df_unique_locations.update(missing)
+
+    return df_locations, df_locations_sum, df_unique_locations

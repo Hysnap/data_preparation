@@ -6,12 +6,7 @@ import io
 import re
 import ast
 import pandas as pd
-import time
-import tqdm
-from geopy.exc import GeocoderTimedOut
-from geopy.geocoders import GoogleV3
-from google.cloud import api_keys_v2
-from google.cloud.api_keys_v2 import Key
+from tqdm.auto import tqdm
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -19,7 +14,7 @@ from textblob import TextBlob
 import spacy
 
 # attach tqdm to pandas
-tqdm.pandas
+tqdm.pandas()
 
 # Download necessary NLTK resources (if you haven't already)
 nltk.download('stopwords')
@@ -27,16 +22,6 @@ nltk.download('wordnet')
 
 # Load the spaCy model
 nlp = spacy.load("en_core_web_sm")
-
-# Initialize the geolocator
-# Load the API key from an environment variable
-api_key = os.getenv("GOOGLE_API_KEY")
-
-if not api_key:
-    raise RuntimeError("Google API key not found. Please set "
-                    "the GOOGLE_API_KEY environment variable.")
-
-geolocator = GoogleV3(api_key=api_key)
 
 
 @log_function_call(logger)
@@ -166,58 +151,6 @@ def string_to_list(location_str):
         return []
 
 
-@log_function_call(logger)
-def restrict_api_key_server(project_id: str, key_id: str) -> Key:
-    """
-    Restricts the API key based on IP addresses. You can specify one or
-    more IP addresses of the callers,
-    for example web servers or cron jobs, that are allowed to use your API key.
-
-    TODO(Developer): Replace the variables before running this sample.
-
-    Args:
-        project_id: Google Cloud project id.
-        key_id: ID of the key to restrict. This ID is auto-created
-        during key creation.
-            This is different from the key string. To obtain the key_id,
-            you can also use the lookup api: client.lookup_key()
-
-    Returns:
-        response: Returns the updated API Key.
-    """
-
-    # Create the API Keys client.
-    client = api_keys_v2.ApiKeysClient()
-
-    # Restrict the API key usage by specifying the IP addresses.
-    # You can specify the IP addresses in IPv4 or IPv6 or a
-    # subnet using CIDR notation.
-    server_key_restrictions = api_keys_v2.ServerKeyRestrictions()
-    server_key_restrictions.allowed_ips = ["80.189.63.110"]
-
-    # Set the API restriction.
-    # For more information on API key restriction, see:
-    # https://cloud.google.com/docs/authentication/api-keys
-    restrictions = api_keys_v2.Restrictions()
-    restrictions.server_key_restrictions = server_key_restrictions
-
-    key = api_keys_v2.Key()
-    key.name = f"projects/{project_id}/locations/global/keys/{key_id}"
-    key.restrictions = restrictions
-
-    # Initialize request and set arguments.
-    request = api_keys_v2.UpdateKeyRequest()
-    request.key = key
-    request.update_mask = "restrictions"
-
-    # Make the request and wait for the operation to complete.
-    response = client.update_key(request=request).result()
-
-    print(f"Successfully updated the API key: {response.name}")
-    # Use response.key_string to authenticate.
-    return response
-
-
 # define media types
 def classify_media(text):
     media_dict = {'video': ['video', 'watch', 'live',
@@ -241,85 +174,3 @@ def classify_media(text):
             return key
     # Default to 'text' if no media type is found
     return 'text'
-
-
-# Function to get geolocation information
-@log_function_call(logger)
-def get_geolocation_info(location):
-    usetimedelay = True
-    try:
-        location_info = geolocator.geocode(location, timeout=10)
-        if location_info:
-            if usetimedelay:
-                time.sleep(1)
-            return {
-                'latitude': location_info.latitude,
-                'longitude': location_info.longitude,
-                'address': location_info.address
-            }
-        else:
-            if usetimedelay:
-                time.sleep(1)
-            return {
-                'latitude': None,
-                'longitude': None,
-                'address': None
-            }
-    except GeocoderTimedOut:
-        print(location)
-        if usetimedelay:
-            time.sleep(1)
-        return {
-            'latitude': None,
-            'longitude': None,
-            'address': None
-        }
-    except Exception as e:
-        print(f"Geocoding error: {e}")
-        if usetimedelay:
-            time.sleep(1)
-        return {
-            'latitude': None,
-            'longitude': None,
-            'address': None
-        }
-
-
-# Function to extract geolocation details
-@log_function_call(logger)
-def extract_geolocation_details(address):
-    if address:
-        address_parts = address.split(', ')
-        country = address_parts[-1] if len(address_parts) > 0 else None
-        state = address_parts[-2] if len(address_parts) > 1 else None
-        continent = address_parts[-3] if len(address_parts) > 2 else None
-        return continent, country, state
-    else:
-        return None, None, None
-
-
-@log_function_call(logger)
-def extract_locations(text, keyword_processor, nlp):
-    """Extracts location names from text using NLP and predefined list."""
-    logger.debug("Starting location extraction...")
-    # convert text to string
-    text = str(text)
-    # Use NLP to extract geographic locations (GPE entities)
-    doc = nlp(text)
-    nlp_locations = (
-        {ent.text.lower() for ent in doc.ents if ent.label_ == "GPE"})
-    logger.debug(f"NLP Extracted Locations: {nlp_locations}")
-
-    # Fast keyword matching for known locations
-    matched_locations = (
-        set(keyword_processor.extract_keywords(text.lower())))
-    logger.debug("Matched Locations"
-                 f" from Predefined List: {matched_locations}")
-
-    # Return matched locations if found; otherwise,
-    # return NLP-extracted ones
-    final_locations = (
-        matched_locations if matched_locations else nlp_locations)
-    logger.debug(f"Final Extracted Locations: {final_locations}")
-
-    return list(final_locations)

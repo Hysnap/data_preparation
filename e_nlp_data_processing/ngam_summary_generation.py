@@ -2,7 +2,7 @@ import os
 import gc
 import pandas as pd
 import numpy as np
-from tqdm import tqdm
+
 from joblib import Parallel, delayed
 from sklearn.feature_extraction.text import CountVectorizer
 import spacy
@@ -164,6 +164,7 @@ def generate_ngram_summary_csv(
 
 if __name__ == "__main__":
     import time
+from tqdm.auto import tqdm
     df = pd.read_csv("sl_data_for_dashboard/preprocessed_wordcloud.zip")
     start = time.time()
     generate_ngram_summary_csv(

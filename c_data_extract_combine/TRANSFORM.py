@@ -1,4 +1,4 @@
-    """
+"""
     description: This script contains the data cleaning and feature extraction
     functions for the combined data. The functions in this script are used to
     classify the media type of the title and article text, extract date
@@ -14,14 +14,14 @@
     the media type of the title and article text. The function also extracts date
     information from the date column, creates date features for use in future
     models, and saves the cleaned and transformed data to a zip file.  
-    """
+"""
 
 import pandas as pd
 import numpy as np
 import holidays
 from sl_utils.logger import datapipeline_logger as logger
 from sl_utils.logger import log_function_call
-from c_data_extract_combine.ETL import classify_media
+from sl_utils.utils import classify_media
 from sl_utils.utils import save_dataframe_to_zip
 
 

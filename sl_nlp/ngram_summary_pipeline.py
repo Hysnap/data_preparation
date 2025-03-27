@@ -3,7 +3,7 @@
 import os
 import gc
 import pandas as pd
-from tqdm import tqdm
+from tqdm.auto import tqdm
 from joblib import Parallel, delayed
 from sklearn.feature_extraction.text import CountVectorizer
 import spacy
