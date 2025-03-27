@@ -8,7 +8,7 @@ from sl_utils.utils import (
      checkdirectory,
      save_dataframe_to_zip,
      )
-from c_data_extract_combine.ETL import (
+from New_Pipeline_structure import (
      data_pipeline,
      )
 from d_transform.ML_model2 import run_pipeline
@@ -19,8 +19,8 @@ from sl_nlp.ngram_summary_pipeline import run_full_ngram_pipeline
 useprecombineddata = False
 usepostnlpdata = False
 useprelocationdata = False
-useprelocationenricheddata = True
-usesavedfile = False
+useprelocationenricheddata = False
+usesavedfile = True
 usegeoapi = True
 useworldcitiesdata = False
 findcommonthemes = False
