@@ -1,26 +1,10 @@
-# numpy==1.26.1
-pandas==2.1.1
-# matplotlib==3.8.0
-# seaborn==0.13.2
-# ydata-profiling==4.12.0 # can be removed from requirements before deployment
-# plotly==5.17.0
-# ppscore==1.1.0 # can be removed from requirements before deployment
-# streamlit==1.40.2
-# feature-engine==1.6.1
-# imbalanced-learn==0.11.0
-# scikit-learn==1.3.1
-# xgboost==1.7.6
-# yellowbrick==1.5 # can be removed from requirements before deployment
-# Pillow==10.0.1 # can be removed from requirements before deployment
-Holidays==0.11.1 # can be removed from requirements before deployment
-textblob
-spacy
-# geopy
-nltk
-# scipy
-google-cloud-api-keys
-flashtext
-tqdm
-geopy
-# bcrypt
-# flask
+numpy>=1.21.0
+pandas>=1.3.0
+spacy>=3.8.4
+nltk>=3.6
+tqdm>=4.62
+joblib>=1.1
+scikit-learn>=1.0
+wordcloud>=1.8.1
+matplotlib>=3.4
+zipfile36>=0.1.3

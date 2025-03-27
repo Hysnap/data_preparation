@@ -19,6 +19,7 @@ import nltk
 import spacy
 import os
 import tqdm
+import zipfile
 from flashtext import KeywordProcessor
 from sl_utils.logger import datapipeline_logger as logger
 from sl_utils.logger import log_function_call
@@ -391,7 +392,7 @@ def extract_geolocation_details(df_unique_locations, worldcities_df):
                             df_unique_locations,
                             on='location',
                             how='left')
-    save the locationsfromarticle data to a csv file
+    # save the locationsfromarticle data to a csv file
 
     save_dataframe_to_zip(df_locations,
                         'data/locationsfromarticle.zip',

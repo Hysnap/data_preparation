@@ -3,6 +3,7 @@ script to run ETL, Transform and other data prep tasks for ROD data
      ↓
 """
 import pandas as pd
+from scripts.common_themes import common_themes
 from sl_utils.logger import datapipeline_logger as logger
 from sl_utils.utils import (
      checkdirectory,
@@ -10,14 +11,13 @@ from sl_utils.utils import (
      get_geolocation_info,
      extract_geolocation_details,
      find_location_match,
-     nlp,
-     
      )
 from c_data_extract_combine.ETL import (
      string_to_list,
      data_pipeline
      )
 from d_transform.ML_model2 import run_pipeline
+from sl_nlp.Ngram_summary_pipeline import run_full_ngram_pipeline
 
 # Generate Combined Data and save as a csv file
 useprecombineddata = False
@@ -38,12 +38,12 @@ if usesavedfile is True:
           except (FileNotFoundError, ImportError):
                logger.info("Saved data not found. Generating new data...")
                combined_df = data_pipeline(useprecombineddata=True,
-                                             usepostnlpdata=True)
+                                           usepostnlpdata=True)
      except Exception as e:
           logger.error(f"Error loading saved data: {e}")
           logger.info("Generating new data...")
           combined_df = data_pipeline(useprecombineddata=True,
-                                        usepostnlpdata=False)
+                                      usepostnlpdata=False)
      else:
           combined_df = data_pipeline(useprecombineddata, usepostnlpdata)
 
@@ -61,10 +61,10 @@ if 'article_id' not in combined_df.columns:
 logger.info("Splitting locationsfromarticle into separate dataframe...")
 df_locations = combined_df[['article_id',
                               'locationsfromarticle']].copy()
-     logger.debug(df_locations.head(5))
-     df_locations['locationsfromarticle'] = (
+logger.debug(df_locations.head(5))
+df_locations['locationsfromarticle'] = (
      df_locations['locationsfromarticle'].apply(string_to_list))
-     df_locations = (
+df_locations = (
      df_locations.explode('locationsfromarticle')
      .rename(columns={'locationsfromarticle': 'location'})
 )
@@ -74,7 +74,7 @@ logger.debug(df_locations.head(10))
 logger.info("Summarizing locationsfromarticle data...")
 df_locations_sum = (
      df_locations.groupby(['article_id',
-                              'location'])
+                           'location'])
      .size()
      .reset_index(name='count'))
 logger.debug(df_locations_sum.head(10))
@@ -119,37 +119,13 @@ else:
           worldcities = pd.read_csv('data/worldcities.csv')
           # merge world cities data with unique locations data
           df_unique_locations = find_location_match(df_unique_locations,
-                                                       worldcities)
+                                                    worldcities)
           logger.debug(df_unique_locations.shape)
 
 logger.info("Data pipeline completed.")
 logger.info("Data cleaning and feature extraction completed.")
 
-if findcommonthemes:
-     logger.info("Finding common themes")
-     # using NLP produce a li    st of common themes
-     # create a list of common themes
-     common_themes = []
-     # iterate over the nlp_text column
-     for text in combined_df['nlp_text']:
-          # create a doc object
-          doc = nlp(text)
-          # iterate over the entities in the doc
-          for ent in doc.ents:
-               # if the entity is a common noun
-               if ent.label_ == 'NOUN':
-                    # append the entity to the common_themes list
-                    common_themes.append(ent.text)
-     # create a dataframe of common themes
-     df_common_themes = pd.DataFrame(common_themes, columns=['theme'])
-     # create a count of the number of times each theme appears
-     df_common_themes = df_common_themes['theme'].value_counts().reset_index()
-     # rename the columns
-     df_common_themes.columns = ['theme', 'count']
-     # save the common themes data to a csv file
-     save_dataframe_to_zip(df_common_themes,
-                              'data/common_themes.zip',
-                              'common_themes.csv')
+common_themes(findcommonthemes, combined_df)
 
 # if no blank or null values in title, article_text, date, label,
 # subject then export to csv
@@ -163,17 +139,22 @@ combined_df.drop(['article_text',
 if combined_df.isnull().sum().sum() == 0:
      logger.info("No missing values in the data")
      save_dataframe_to_zip(combined_df,
-                              'data/combined_data.zip',
-                              'combined_data.csv')
+                           'data/combined_data.zip',
+                           'combined_data.csv')
      logger.info("Data cleaned and saved as combined_data.csv in data folder")
 else:
      logger.info("There are still missing values in the data")
      save_dataframe_to_zip(combined_df,
-                              'data/combined_data.zip',
-                              'combined_data.csv')
+                           'data/combined_data.zip',
+                           'combined_data.csv')
      logger.info("Data cleaned and saved as combined_data.csv in data folder")
      logger.info("Data cleaning and feature extraction completed.")
 
 # regenerate MachineLearning Models and Data
-    run_pipeline(data_path="sl_data_for_dashboard/training_data.zip",
-                 model_type="classification")
+run_pipeline(data_path="sl_data_for_dashboard/training_data.zip",
+             model_type="classification")
+
+# run ngram and wordcloud analysis and image creation
+run_full_ngram_pipeline(input_csv="sl_data_for_dashboard/training_data.zip",
+                        output_csv="sl_data_for_dashboard/ngram_data.zip",
+                        output_image="wordclouds/ngram_image.png")

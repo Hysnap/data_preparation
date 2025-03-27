@@ -61,7 +61,7 @@ def preprocess_for_wordcloud(input_path,
                                                        remove_punctuation))
 
     # Optional: drop originals
-    df = df[[label_col, "text"]]
+    df = df[[label_col, "text", "year"]]
 
     # Optional: save output
     if output_path:

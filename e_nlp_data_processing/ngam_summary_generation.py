@@ -1,6 +1,7 @@
 import os
 import gc
 import pandas as pd
+import numpy as np
 from tqdm import tqdm
 from joblib import Parallel, delayed
 from sklearn.feature_extraction.text import CountVectorizer
@@ -115,6 +116,8 @@ def process_ngram(df, n, vocab_filter, text_column, label_column,
         for term, idx in tqdm(term_indices.items(),
                               desc=f"{n}-gram terms",
                               leave=False)
+        if n == 1 or not all(word in STOP_WORDS for word in term.split())
+        if term.isascii() and term.isalpha()  # Ensure term contains only Roman characters
     )
 
     summary_rows = [r for r in results if r]

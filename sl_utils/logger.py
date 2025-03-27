@@ -2,7 +2,6 @@ import logging
 import os
 import sys
 import functools
-import streamlit as st
 # from functools import wraps
 
 # Allow dynamic control of log level via environment variable or a default
@@ -65,22 +64,18 @@ def log_function_call(logger):
                 logger.info(f"{func.__name__} executed successfully")
                 return result
             except Exception as e:
-                if not hasattr(st.session_state, "error_logged"):
-                    logger.error(f"Error in {func.__name__}: {e}",
-                                 exc_info=True)
-                    st.session_state.error_logged = True
-                    st.error(f"Error in {func.__name__}: {e}")
+                logger.error(f"Error in {func.__name__}: {e}", exc_info=True)
                 raise
         return wrapper
     return decorator
 
 
-def init_state_var(var_name, config_value):
+def init_state_var(var_name, config_value, state_dict):
     # set logger for init state var
     logger = datapipeline_logger
-    if var_name not in st.session_state:
-        st.session_state[var_name] = config_value
+    if var_name not in state_dict:
+        state_dict[var_name] = config_value
         return logger.debug(f"Initialised {var_name} with"
                             f" value: {config_value}")
     else:
-        return logger.debug(f"{var_name} already exists in session state")
+        return logger.debug(f"{var_name} already exists in state dictionary")

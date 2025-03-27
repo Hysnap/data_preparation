@@ -2,8 +2,7 @@
 Configuration file for the package.
 """
 import os
-import streamlit as st
-from sl_utils.logger import log_function_call, streamlit_logger as logger
+from sl_utils.logger import log_function_call, datapipeline_logger as logger
 from sl_utils.version import get_git_version
 from sl_utils.global_variables import initialize_session_state
 
@@ -26,7 +25,6 @@ def setup_package():
         logger.info(f"Version: {version}")
     except Exception as e:
         logger.critical(f"App setup crashed: {e}", exc_info=True)
-        st.error(f"App setup failed. Please check logs. {e}")
         raise SystemExit("App setup failed. Exiting.")
     # Define the description of the package
     # packagedescription = "A package to clean and dedupe data"
@@ -72,6 +70,5 @@ def setup_package():
         logger.info("Package setup complete")
     except Exception as e:
         logger.critical(f"App setup crashed: {e}", exc_info=True)
-        st.error(f"App setup failed. Please check logs. {e}")
         raise SystemExit("App setup failed. Exiting.")
     return

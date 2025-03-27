@@ -1,9 +1,8 @@
 # all globel variables and constants are defined here  #
-import streamlit as st
 from pathlib import Path
 from sl_utils.logger import (log_function_call,
                              init_state_var,
-                             streamlit_logger as logger,
+                             datapipeline_logger as logger,
                              )
 import config as config  # Import the config file
 import os
