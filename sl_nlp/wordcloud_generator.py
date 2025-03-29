@@ -153,7 +153,7 @@ if __name__ == "__main__":
         cache_dir="sl_data_for_dashboard/wordclouds/cache",
         mask_real_path="sillouettes/mask_real.png",
         mask_dubious_path="sillouettes/mask_dubious.png",
-        mask_all_path="sillouettes/Real_and_dubious.png",
+        mask_all_path="sillouettes/mask_combined.png",
         ngram_types=(1, 2, 3),  # or (2,) if just 2-grams
         progress_fn=print
     )
