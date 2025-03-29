@@ -143,11 +143,15 @@ def categorize_subjectivity(subjectivity):
 
 
 # covert a string to a list
-def string_to_list(location_str):
-    """Safely converts a string representation of a list to a list."""
+def string_to_list(s):
     try:
-        return ast.literal_eval(location_str)
-    except (ValueError, SyntaxError, TypeError):
+        if isinstance(s, str):
+            return ast.literal_eval(s)
+        elif isinstance(s, list):
+            return s
+        else:
+            return []
+    except (ValueError, SyntaxError):
         return []
 
 

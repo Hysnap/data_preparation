@@ -2,11 +2,14 @@
 
 import os
 import pandas as pd
+from tqdm.auto import tqdm
 from ngram_summary_pipeline import run_full_ngram_pipeline
-from wordcloud_generator import generate_wordcloud_images
+from wordcloud_generator import generate_wordclouds_from_ngram_summaries
 from theme_extraction import save_themes_by_year
 import subprocess
 subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+
+tqdm.pandas(desc="Processing")
 
 
 def run_full_nlp_pipeline(input_csv,
@@ -36,7 +39,7 @@ def run_full_nlp_pipeline(input_csv,
 
     print("\n🚀 Starting full NLP processing pipeline\n")
 
-    df = pd.read_csv(input_csv)
+    df = pd.read_csv(input_csv, low_memory=False)
 
     # === Run N-gram summary ===
     run_full_ngram_pipeline(
@@ -50,13 +53,12 @@ def run_full_nlp_pipeline(input_csv,
     )
 
     # === Generate Word Clouds ===
-    generate_wordcloud_images(
-        df=df,
-        text_column=text_column,
-        label_column=label_column,
-        output_dir=os.path.join(output_dir, "wordclouds"),
-        cache_dir=os.path.join(output_dir, "wordclouds/cache"),
-        progress_fn=progress
+    generate_wordclouds_from_ngram_summaries(
+        input_dir="sl_data_for_dashboard",
+        word_column="term",
+        output_dir="wordclouds",
+        cache_dir="sl_data_for_dashboard/wordclouds/cache",
+        progress_fn=print
     )
 
     # === Extract Common Themes ===
@@ -74,7 +76,7 @@ if __name__ == "__main__":
     run_full_nlp_pipeline(
         input_csv="sl_data_for_dashboard/preprocessed_wordcloud.zip",
         output_dir="sl_data_for_dashboard",
-        min_count_threshold=50,
+        min_count_threshold=25,
         ngram_range=(1, 3),
         n_jobs=4
     )

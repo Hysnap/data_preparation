@@ -303,9 +303,9 @@ def plot_article_vs_title_subjectivity_scat(
     filtered_df["label"] = filtered_df["label"].astype(str)
 
     # Drop rows where both subjectivity values are missing
-    filtered_df.dropna(subset=["title_subjectivity",
-                               "article_subjectivity"],
-                       how="all", inplace=True)
+    filtered_df = filtered_df.dropna(subset=["title_subjectivity",
+                                             "article_subjectivity"],
+                                     how="all")
 
     # Define color palette for labels
     my_pal = {0: "green", 1: "red"}

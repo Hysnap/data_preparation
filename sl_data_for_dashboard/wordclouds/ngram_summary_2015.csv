@@ -1,0 +1,1200 @@
+term,ngram_size,is_phrase,count_real,count_dubious,total_count,in_real,in_dubious,max_real,mean_real,stdev_real,max_dubious,mean_dubious,stdev_dubious,relevance_score
+able,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+abortion,1,False,0,13,13,False,True,0,0.0,0.0,4,2.6,1.0198,1.0
+according,1,False,0,52,52,False,True,0,0.0,0.0,4,1.5758,0.8539,1.0
+account,1,False,0,24,24,False,True,0,0.0,0.0,12,3.4286,3.58,1.0
+accounts,1,False,0,12,12,False,True,0,0.0,0.0,9,4.0,3.559,1.0
+act,1,False,0,19,19,False,True,0,0.0,0.0,4,1.4615,0.8427,1.0
+action,1,False,0,21,21,False,True,0,0.0,0.0,4,1.4,0.8794,1.0
+activists,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+additional,1,False,0,11,11,False,True,0,0.0,0.0,4,1.8333,1.0672,1.0
+address,1,False,0,14,14,False,True,0,0.0,0.0,7,2.8,2.1354,1.0
+administration,1,False,0,53,53,False,True,0,0.0,0.0,12,2.7895,2.587,1.0
+admissions,1,False,0,17,17,False,True,0,0.0,0.0,12,5.6667,4.6428,1.0
+agencies,1,False,0,18,18,False,True,0,0.0,0.0,11,3.0,3.6056,1.0
+agency,1,False,0,20,20,False,True,0,0.0,0.0,7,2.8571,2.1665,1.0
+ago,1,False,0,11,11,False,True,0,0.0,0.0,2,1.1,0.3,1.0
+agreement,1,False,0,18,18,False,True,0,0.0,0.0,7,3.0,2.2361,1.0
+al,1,False,0,19,19,False,True,0,0.0,0.0,6,2.7143,1.5779,1.0
+allowed,1,False,0,12,12,False,True,0,0.0,0.0,3,1.2,0.6,1.0
+america,1,False,0,52,52,False,True,0,0.0,0.0,6,1.4857,0.9672,1.0
+american,1,False,0,55,55,False,True,0,0.0,0.0,5,1.8966,1.155,1.0
+americans,1,False,0,42,42,False,True,0,0.0,0.0,6,1.5,1.0522,1.0
+amtrak,1,False,0,15,15,False,True,0,0.0,0.0,15,15.0,0.0,1.0
+announced,1,False,0,15,15,False,True,0,0.0,0.0,2,1.1538,0.3608,1.0
+appear,1,False,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+applicants,1,False,0,11,11,False,True,0,0.0,0.0,7,5.5,1.5,1.0
+arrested,1,False,0,12,12,False,True,0,0.0,0.0,4,2.4,1.0198,1.0
+asian,1,False,0,15,15,False,True,0,0.0,0.0,14,7.5,6.5,1.0
+ask,1,False,0,19,19,False,True,0,0.0,0.0,3,1.4615,0.6343,1.0
+asked,1,False,0,31,31,False,True,0,0.0,0.0,7,1.7222,1.4066,1.0
+asking,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+assistant,1,False,0,11,11,False,True,0,0.0,0.0,2,1.1,0.3,1.0
+attack,1,False,0,18,18,False,True,0,0.0,0.0,4,2.5714,1.0498,1.0
+attorney,1,False,0,12,12,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+authorities,1,False,0,13,13,False,True,0,0.0,0.0,2,1.8571,0.3499,1.0
+away,1,False,0,13,13,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+babies,1,False,0,13,13,False,True,0,0.0,0.0,7,2.6,2.245,1.0
+baby,1,False,0,14,14,False,True,0,0.0,0.0,6,2.0,1.7728,1.0
+bad,1,False,0,12,12,False,True,0,0.0,0.0,5,2.0,1.5275,1.0
+bail,1,False,0,24,24,False,True,0,0.0,0.0,23,12.0,11.0,1.0
+baltimore,1,False,0,10,10,False,True,0,0.0,0.0,7,3.3333,2.6247,1.0
+bank,1,False,0,23,23,False,True,0,0.0,0.0,18,5.75,7.1195,1.0
+banks,1,False,0,16,16,False,True,0,0.0,0.0,8,5.3333,2.0548,1.0
+base,1,False,0,18,18,False,True,0,0.0,0.0,13,3.6,4.7159,1.0
+based,1,False,0,13,13,False,True,0,0.0,0.0,5,1.625,1.317,1.0
+believe,1,False,0,21,21,False,True,0,0.0,0.0,3,1.5,0.7319,1.0
+best,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+better,1,False,0,15,15,False,True,0,0.0,0.0,3,1.3636,0.6428,1.0
+bias,1,False,0,10,10,False,True,0,0.0,0.0,4,2.5,1.118,1.0
+big,1,False,0,12,12,False,True,0,0.0,0.0,3,1.5,0.7071,1.0
+bill,1,False,0,25,25,False,True,0,0.0,0.0,4,1.5625,0.8638,1.0
+billion,1,False,0,17,17,False,True,0,0.0,0.0,6,2.4286,1.5908,1.0
+birth,1,False,0,12,12,False,True,0,0.0,0.0,9,3.0,3.4641,1.0
+black,1,False,0,47,47,False,True,0,0.0,0.0,12,2.7647,2.9009,1.0
+board,1,False,0,13,13,False,True,0,0.0,0.0,5,2.1667,1.4625,1.0
+body,1,False,0,10,10,False,True,0,0.0,0.0,3,1.4286,0.7284,1.0
+book,1,False,0,18,18,False,True,0,0.0,0.0,4,1.8,1.077,1.0
+border,1,False,0,21,21,False,True,0,0.0,0.0,6,2.3333,1.633,1.0
+born,1,False,0,18,18,False,True,0,0.0,0.0,4,1.6364,0.9791,1.0
+boy,1,False,0,10,10,False,True,0,0.0,0.0,4,2.0,1.2649,1.0
+breitbart,1,False,0,35,35,False,True,0,0.0,0.0,7,1.8421,1.6627,1.0
+bringing,1,False,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+broke,1,False,0,11,11,False,True,0,0.0,0.0,3,1.5714,0.7284,1.0
+brother,1,False,0,12,12,False,True,0,0.0,0.0,3,1.7143,0.6999,1.0
+budget,1,False,0,14,14,False,True,0,0.0,0.0,5,2.0,1.3093,1.0
+building,1,False,0,12,12,False,True,0,0.0,0.0,5,2.4,1.4967,1.0
+bush,1,False,0,23,23,False,True,0,0.0,0.0,17,3.2857,5.5988,1.0
+business,1,False,0,23,23,False,True,0,0.0,0.0,6,1.7692,1.3674,1.0
+california,1,False,0,22,22,False,True,0,0.0,0.0,5,2.4444,1.3426,1.0
+called,1,False,0,33,33,False,True,0,0.0,0.0,4,1.5,0.7833,1.0
+caller,1,False,0,10,10,False,True,0,0.0,0.0,3,1.6667,0.7454,1.0
+calling,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+came,1,False,0,15,15,False,True,0,0.0,0.0,2,1.1538,0.3608,1.0
+campaign,1,False,0,24,24,False,True,0,0.0,0.0,4,1.4118,0.7715,1.0
+campus,1,False,0,40,40,False,True,0,0.0,0.0,12,4.0,2.9326,1.0
+cancer,1,False,0,25,25,False,True,0,0.0,0.0,24,12.5,11.5,1.0
+candidate,1,False,0,22,22,False,True,0,0.0,0.0,3,1.375,0.5995,1.0
+candidates,1,False,0,19,19,False,True,0,0.0,0.0,6,1.9,1.6401,1.0
+care,1,False,0,13,13,False,True,0,0.0,0.0,3,1.1818,0.575,1.0
+career,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+case,1,False,0,20,20,False,True,0,0.0,0.0,2,1.4286,0.4949,1.0
+cases,1,False,0,17,17,False,True,0,0.0,0.0,6,1.5455,1.4374,1.0
+center,1,False,0,23,23,False,True,0,0.0,0.0,7,1.6429,1.5403,1.0
+change,1,False,0,17,17,False,True,0,0.0,0.0,4,1.2143,0.7726,1.0
+charged,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+charges,1,False,0,13,13,False,True,0,0.0,0.0,4,1.8571,1.1249,1.0
+chavez,1,False,0,10,10,False,True,0,0.0,0.0,7,5.0,2.0,1.0
+child,1,False,0,34,34,False,True,0,0.0,0.0,17,3.4,4.7371,1.0
+childhood,1,False,0,12,12,False,True,0,0.0,0.0,11,6.0,5.0,1.0
+children,1,False,0,46,46,False,True,0,0.0,0.0,9,2.875,2.5464,1.0
+christian,1,False,0,20,20,False,True,0,0.0,0.0,11,2.8571,3.3987,1.0
+christians,1,False,0,21,21,False,True,0,0.0,0.0,10,4.2,3.1241,1.0
+christmas,1,False,0,28,28,False,True,0,0.0,0.0,17,7.0,5.9582,1.0
+citizens,1,False,0,15,15,False,True,0,0.0,0.0,4,1.5,0.922,1.0
+city,1,False,0,49,49,False,True,0,0.0,0.0,10,2.7222,2.4901,1.0
+civil,1,False,0,20,20,False,True,0,0.0,0.0,3,2.0,0.7746,1.0
+claimed,1,False,0,11,11,False,True,0,0.0,0.0,7,2.2,2.4,1.0
+claims,1,False,0,17,17,False,True,0,0.0,0.0,5,1.5455,1.1571,1.0
+class,1,False,0,23,23,False,True,0,0.0,0.0,6,2.5556,1.95,1.0
+clinton,1,False,0,65,65,False,True,0,0.0,0.0,18,4.0625,4.1604,1.0
+cocaine,1,False,0,25,25,False,True,0,0.0,0.0,25,25.0,0.0,1.0
+college,1,False,0,37,37,False,True,0,0.0,0.0,9,3.3636,2.6722,1.0
+come,1,False,0,27,27,False,True,0,0.0,0.0,6,1.4211,1.1386,1.0
+comes,1,False,0,15,15,False,True,0,0.0,0.0,2,1.0714,0.2575,1.0
+coming,1,False,0,12,12,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+committee,1,False,0,13,13,False,True,0,0.0,0.0,3,1.3,0.6403,1.0
+community,1,False,0,31,31,False,True,0,0.0,0.0,4,1.9375,1.1973,1.0
+commuted,1,False,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+company,1,False,0,13,13,False,True,0,0.0,0.0,3,1.4444,0.6849,1.0
+congress,1,False,0,23,23,False,True,0,0.0,0.0,6,1.6429,1.2877,1.0
+conservative,1,False,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+conspiracy,1,False,0,19,19,False,True,0,0.0,0.0,16,9.5,6.5,1.0
+continue,1,False,0,11,11,False,True,0,0.0,0.0,2,1.375,0.4841,1.0
+control,1,False,0,14,14,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+couldn,1,False,0,13,13,False,True,0,0.0,0.0,4,1.4444,0.9558,1.0
+counsel,1,False,0,14,14,False,True,0,0.0,0.0,12,4.6667,5.1854,1.0
+country,1,False,0,43,43,False,True,0,0.0,0.0,5,1.6538,0.9175,1.0
+county,1,False,0,10,10,False,True,0,0.0,0.0,4,2.0,1.0954,1.0
+course,1,False,0,25,25,False,True,0,0.0,0.0,9,1.9231,2.129,1.0
+court,1,False,0,27,27,False,True,0,0.0,0.0,5,2.4545,1.4993,1.0
+cover,1,False,0,10,10,False,True,0,0.0,0.0,5,1.6667,1.4907,1.0
+create,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+created,1,False,0,11,11,False,True,0,0.0,0.0,2,1.375,0.4841,1.0
+crime,1,False,0,12,12,False,True,0,0.0,0.0,3,1.7143,0.6999,1.0
+criminal,1,False,0,10,10,False,True,0,0.0,0.0,4,2.0,1.0954,1.0
+cruz,1,False,0,14,14,False,True,0,0.0,0.0,7,3.5,2.2913,1.0
+current,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+customers,1,False,0,12,12,False,True,0,0.0,0.0,5,1.7143,1.3851,1.0
+daily,1,False,0,19,19,False,True,0,0.0,0.0,6,1.5833,1.3819,1.0
+day,1,False,0,29,29,False,True,0,0.0,0.0,4,1.6111,0.951,1.0
+days,1,False,0,12,12,False,True,0,0.0,0.0,2,1.0909,0.2875,1.0
+de,1,False,0,16,16,False,True,0,0.0,0.0,6,4.0,1.4142,1.0
+dead,1,False,0,10,10,False,True,0,0.0,0.0,3,1.6667,0.7454,1.0
+deal,1,False,0,34,34,False,True,0,0.0,0.0,11,3.4,3.2,1.0
+death,1,False,0,13,13,False,True,0,0.0,0.0,4,1.4444,0.9558,1.0
+debate,1,False,0,15,15,False,True,0,0.0,0.0,4,1.875,1.2686,1.0
+debt,1,False,0,10,10,False,True,0,0.0,0.0,8,5.0,3.0,1.0
+decision,1,False,0,20,20,False,True,0,0.0,0.0,5,1.5385,1.0824,1.0
+defense,1,False,0,13,13,False,True,0,0.0,0.0,3,1.4444,0.6849,1.0
+demand,1,False,0,15,15,False,True,0,0.0,0.0,9,2.1429,2.7994,1.0
+demands,1,False,0,10,10,False,True,0,0.0,0.0,7,2.5,2.5981,1.0
+department,1,False,0,52,52,False,True,0,0.0,0.0,4,1.5758,0.8539,1.0
+deputy,1,False,0,12,12,False,True,0,0.0,0.0,3,1.5,0.7071,1.0
+descent,1,False,0,20,20,False,True,0,0.0,0.0,16,5.0,6.364,1.0
+described,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+despite,1,False,0,12,12,False,True,0,0.0,0.0,3,1.3333,0.6667,1.0
+development,1,False,0,13,13,False,True,0,0.0,0.0,7,2.1667,2.1922,1.0
+didn,1,False,0,23,23,False,True,0,0.0,0.0,3,1.4375,0.7043,1.0
+director,1,False,0,23,23,False,True,0,0.0,0.0,3,1.2778,0.6503,1.0
+discrimination,1,False,0,11,11,False,True,0,0.0,0.0,3,1.8333,0.6872,1.0
+distribute,1,False,0,23,23,False,True,0,0.0,0.0,23,23.0,0.0,1.0
+district,1,False,0,28,28,False,True,0,0.0,0.0,22,4.0,7.3485,1.0
+documents,1,False,0,16,16,False,True,0,0.0,0.0,4,1.4545,0.8907,1.0
+doesn,1,False,0,17,17,False,True,0,0.0,0.0,2,1.0625,0.2421,1.0
+dollars,1,False,0,15,15,False,True,0,0.0,0.0,3,1.3636,0.6428,1.0
+don,1,False,0,42,42,False,True,0,0.0,0.0,3,1.5,0.6814,1.0
+donald,1,False,0,11,11,False,True,0,0.0,0.0,3,1.2222,0.6285,1.0
+dr,1,False,0,10,10,False,True,0,0.0,0.0,4,1.4286,1.0498,1.0
+driscoll,1,False,0,11,11,False,True,0,0.0,0.0,11,11.0,0.0,1.0
+earlier,1,False,0,16,16,False,True,0,0.0,0.0,2,1.2308,0.4213,1.0
+early,1,False,0,11,11,False,True,0,0.0,0.0,3,1.2222,0.6285,1.0
+east,1,False,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+economic,1,False,0,15,15,False,True,0,0.0,0.0,5,1.5,1.2042,1.0
+education,1,False,0,18,18,False,True,0,0.0,0.0,4,1.6364,0.9791,1.0
+effort,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+election,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+email,1,False,0,21,21,False,True,0,0.0,0.0,10,2.625,2.9554,1.0
+emails,1,False,0,11,11,False,True,0,0.0,0.0,4,2.2,1.4697,1.0
+end,1,False,0,12,12,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+enforcement,1,False,0,16,16,False,True,0,0.0,0.0,5,1.7778,1.3147,1.0
+entire,1,False,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+epa,1,False,0,29,29,False,True,0,0.0,0.0,16,9.6667,6.3421,1.0
+especially,1,False,0,11,11,False,True,0,0.0,0.0,2,1.375,0.4841,1.0
+example,1,False,0,14,14,False,True,0,0.0,0.0,2,1.0769,0.2665,1.0
+expert,1,False,0,12,12,False,True,0,0.0,0.0,9,3.0,3.4641,1.0
+expire,1,False,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+face,1,False,0,14,14,False,True,0,0.0,0.0,2,1.2727,0.4454,1.0
+facebook,1,False,0,10,10,False,True,0,0.0,0.0,6,2.0,2.0,1.0
+faculty,1,False,0,14,14,False,True,0,0.0,0.0,4,2.0,1.069,1.0
+failed,1,False,0,13,13,False,True,0,0.0,0.0,5,1.8571,1.3553,1.0
+fair,1,False,0,11,11,False,True,0,0.0,0.0,3,1.375,0.696,1.0
+families,1,False,0,17,17,False,True,0,0.0,0.0,4,1.4167,0.9538,1.0
+family,1,False,0,48,48,False,True,0,0.0,0.0,8,2.5263,1.902,1.0
+far,1,False,0,13,13,False,True,0,0.0,0.0,3,1.3,0.6403,1.0
+fargo,1,False,0,14,14,False,True,0,0.0,0.0,13,7.0,6.0,1.0
+father,1,False,0,24,24,False,True,0,0.0,0.0,8,2.4,2.2,1.0
+federal,1,False,0,53,53,False,True,0,0.0,0.0,8,2.12,1.681,1.0
+feel,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+fight,1,False,0,20,20,False,True,0,0.0,0.0,8,1.8182,1.9917,1.0
+fighting,1,False,0,10,10,False,True,0,0.0,0.0,4,1.6667,1.1055,1.0
+financial,1,False,0,19,19,False,True,0,0.0,0.0,8,2.375,2.3419,1.0
+find,1,False,0,25,25,False,True,0,0.0,0.0,3,1.3158,0.5669,1.0
+flag,1,False,0,17,17,False,True,0,0.0,0.0,11,3.4,3.8781,1.0
+following,1,False,0,13,13,False,True,0,0.0,0.0,2,1.1818,0.3857,1.0
+food,1,False,0,14,14,False,True,0,0.0,0.0,6,2.3333,1.7951,1.0
+foreign,1,False,0,22,22,False,True,0,0.0,0.0,5,1.6923,1.0659,1.0
+found,1,False,0,24,24,False,True,0,0.0,0.0,3,1.3333,0.6667,1.0
+foundation,1,False,0,12,12,False,True,0,0.0,0.0,3,1.7143,0.8806,1.0
+francisco,1,False,0,19,19,False,True,0,0.0,0.0,9,3.1667,2.6719,1.0
+free,1,False,0,20,20,False,True,0,0.0,0.0,2,1.1765,0.3812,1.0
+freedom,1,False,0,12,12,False,True,0,0.0,0.0,3,1.7143,0.6999,1.0
+friday,1,False,0,16,16,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+funding,1,False,0,23,23,False,True,0,0.0,0.0,7,3.2857,2.1853,1.0
+funds,1,False,0,12,12,False,True,0,0.0,0.0,4,1.3333,0.9428,1.0
+future,1,False,0,11,11,False,True,0,0.0,0.0,2,1.375,0.4841,1.0
+gave,1,False,0,11,11,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+gender,1,False,0,16,16,False,True,0,0.0,0.0,9,4.0,3.0822,1.0
+general,1,False,0,16,16,False,True,0,0.0,0.0,4,1.2308,0.7994,1.0
+getting,1,False,0,14,14,False,True,0,0.0,0.0,2,1.0769,0.2665,1.0
+ghost,1,False,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+given,1,False,0,19,19,False,True,0,0.0,0.0,2,1.1176,0.3222,1.0
+giving,1,False,0,10,10,False,True,0,0.0,0.0,3,1.4286,0.7284,1.0
+goal,1,False,0,12,12,False,True,0,0.0,0.0,4,1.5,1.0,1.0
+going,1,False,0,39,39,False,True,0,0.0,0.0,6,1.625,1.111,1.0
+gold,1,False,0,12,12,False,True,0,0.0,0.0,9,3.0,3.4641,1.0
+gon,1,False,0,14,14,False,True,0,0.0,0.0,8,3.5,2.8723,1.0
+good,1,False,0,30,30,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+gop,1,False,0,15,15,False,True,0,0.0,0.0,6,2.1429,1.8844,1.0
+got,1,False,0,22,22,False,True,0,0.0,0.0,3,1.375,0.5995,1.0
+government,1,False,0,73,73,False,True,0,0.0,0.0,10,2.2121,2.0114,1.0
+graham,1,False,0,28,28,False,True,0,0.0,0.0,21,5.6,7.7356,1.0
+grant,1,False,0,29,29,False,True,0,0.0,0.0,22,5.8,8.1339,1.0
+great,1,False,0,21,21,False,True,0,0.0,0.0,4,1.4,0.8,1.0
+group,1,False,0,35,35,False,True,0,0.0,0.0,4,1.5217,0.9264,1.0
+groups,1,False,0,13,13,False,True,0,0.0,0.0,6,2.6,2.0591,1.0
+growing,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+gutierrez,1,False,0,13,13,False,True,0,0.0,0.0,9,6.5,2.5,1.0
+hall,1,False,0,12,12,False,True,0,0.0,0.0,5,2.4,1.3565,1.0
+hand,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+happy,1,False,0,12,12,False,True,0,0.0,0.0,5,2.0,1.4142,1.0
+hard,1,False,0,10,10,False,True,0,0.0,0.0,3,1.4286,0.7284,1.0
+having,1,False,0,13,13,False,True,0,0.0,0.0,2,1.0833,0.2764,1.0
+health,1,False,0,21,21,False,True,0,0.0,0.0,7,1.9091,1.7297,1.0
+heard,1,False,0,11,11,False,True,0,0.0,0.0,2,1.1,0.3,1.0
+help,1,False,0,24,24,False,True,0,0.0,0.0,3,1.3333,0.5774,1.0
+high,1,False,0,25,25,False,True,0,0.0,0.0,6,2.2727,1.6564,1.0
+hillary,1,False,0,43,43,False,True,0,0.0,0.0,9,2.6875,2.5671,1.0
+history,1,False,0,29,29,False,True,0,0.0,0.0,5,1.5263,1.0447,1.0
+holy,1,False,0,11,11,False,True,0,0.0,0.0,6,2.75,2.0463,1.0
+home,1,False,0,24,24,False,True,0,0.0,0.0,5,1.8462,1.2308,1.0
+homeland,1,False,0,10,10,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+hope,1,False,0,13,13,False,True,0,0.0,0.0,3,1.4444,0.8315,1.0
+house,1,False,0,53,53,False,True,0,0.0,0.0,9,2.2083,1.9996,1.0
+housing,1,False,0,28,28,False,True,0,0.0,0.0,17,5.6,6.1188,1.0
+hud,1,False,0,28,28,False,True,0,0.0,0.0,26,14.0,12.0,1.0
+huffington,1,False,0,10,10,False,True,0,0.0,0.0,7,2.5,2.5981,1.0
+human,1,False,0,21,21,False,True,0,0.0,0.0,4,2.1,1.3,1.0
+idea,1,False,0,17,17,False,True,0,0.0,0.0,4,1.5455,0.9875,1.0
+illegal,1,False,0,39,39,False,True,0,0.0,0.0,15,2.4375,3.3721,1.0
+immigrant,1,False,0,22,22,False,True,0,0.0,0.0,7,2.4444,2.2167,1.0
+immigrants,1,False,0,26,26,False,True,0,0.0,0.0,8,2.8889,2.2825,1.0
+immigration,1,False,0,45,45,False,True,0,0.0,0.0,8,3.4615,2.5303,1.0
+important,1,False,0,18,18,False,True,0,0.0,0.0,2,1.3846,0.4865,1.0
+imprisonment,1,False,0,25,25,False,True,0,0.0,0.0,24,12.5,11.5,1.0
+include,1,False,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+included,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+including,1,False,0,28,28,False,True,0,0.0,0.0,3,1.3333,0.5634,1.0
+individuals,1,False,0,12,12,False,True,0,0.0,0.0,5,2.0,1.5275,1.0
+information,1,False,0,12,12,False,True,0,0.0,0.0,5,2.0,1.4142,1.0
+instead,1,False,0,12,12,False,True,0,0.0,0.0,2,1.0909,0.2875,1.0
+institute,1,False,0,11,11,False,True,0,0.0,0.0,3,1.2222,0.6285,1.0
+intent,1,False,0,20,20,False,True,0,0.0,0.0,16,4.0,6.0,1.0
+interest,1,False,0,16,16,False,True,0,0.0,0.0,5,1.4545,1.1571,1.0
+interview,1,False,0,19,19,False,True,0,0.0,0.0,3,1.3571,0.7178,1.0
+iran,1,False,0,33,33,False,True,0,0.0,0.0,14,6.6,4.7159,1.0
+islamic,1,False,0,26,26,False,True,0,0.0,0.0,10,3.7143,3.2826,1.0
+isn,1,False,0,15,15,False,True,0,0.0,0.0,3,1.25,0.5951,1.0
+issues,1,False,0,14,14,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+job,1,False,0,17,17,False,True,0,0.0,0.0,2,1.2143,0.4103,1.0
+jobs,1,False,0,14,14,False,True,0,0.0,0.0,6,2.3333,1.6997,1.0
+july,1,False,0,30,30,False,True,0,0.0,0.0,23,4.2857,7.6479,1.0
+justice,1,False,0,37,37,False,True,0,0.0,0.0,8,1.85,1.6815,1.0
+kids,1,False,0,15,15,False,True,0,0.0,0.0,6,1.875,1.691,1.0
+killed,1,False,0,12,12,False,True,0,0.0,0.0,4,1.7143,1.0302,1.0
+king,1,False,0,48,48,False,True,0,0.0,0.0,43,8.0,15.6525,1.0
+knew,1,False,0,14,14,False,True,0,0.0,0.0,5,1.4,1.2,1.0
+know,1,False,0,37,37,False,True,0,0.0,0.0,3,1.3214,0.6008,1.0
+la,1,False,0,10,10,False,True,0,0.0,0.0,4,2.0,1.2649,1.0
+labor,1,False,0,12,12,False,True,0,0.0,0.0,10,4.0,4.2426,1.0
+large,1,False,0,12,12,False,True,0,0.0,0.0,2,1.0909,0.2875,1.0
+late,1,False,0,11,11,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+later,1,False,0,14,14,False,True,0,0.0,0.0,3,1.4,0.6633,1.0
+latest,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+law,1,False,0,42,42,False,True,0,0.0,0.0,4,1.75,0.8292,1.0
+laws,1,False,0,13,13,False,True,0,0.0,0.0,2,1.1818,0.3857,1.0
+lead,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+leaders,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+led,1,False,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+lee,1,False,0,23,23,False,True,0,0.0,0.0,15,5.75,5.7173,1.0
+left,1,False,0,32,32,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+leftist,1,False,0,13,13,False,True,0,0.0,0.0,3,1.3,0.6403,1.0
+legal,1,False,0,10,10,False,True,0,0.0,0.0,4,2.0,1.0954,1.0
+let,1,False,0,15,15,False,True,0,0.0,0.0,2,1.1538,0.3608,1.0
+letter,1,False,0,15,15,False,True,0,0.0,0.0,6,1.875,1.691,1.0
+liberal,1,False,0,14,14,False,True,0,0.0,0.0,5,1.5556,1.2571,1.0
+liberty,1,False,0,16,16,False,True,0,0.0,0.0,11,4.0,4.062,1.0
+life,1,False,0,47,47,False,True,0,0.0,0.0,11,2.7647,2.7339,1.0
+like,1,False,0,79,79,False,True,0,0.0,0.0,5,1.7174,0.9926,1.0
+list,1,False,0,19,19,False,True,0,0.0,0.0,6,1.9,1.6401,1.0
+little,1,False,0,25,25,False,True,0,0.0,0.0,4,1.5625,0.8638,1.0
+live,1,False,0,16,16,False,True,0,0.0,0.0,3,1.3333,0.6236,1.0
+lives,1,False,0,24,24,False,True,0,0.0,0.0,5,1.6,1.0832,1.0
+ll,1,False,0,16,16,False,True,0,0.0,0.0,4,1.2308,0.7994,1.0
+lobbying,1,False,0,23,23,False,True,0,0.0,0.0,22,11.5,10.5,1.0
+local,1,False,0,23,23,False,True,0,0.0,0.0,4,1.4375,0.8638,1.0
+long,1,False,0,17,17,False,True,0,0.0,0.0,2,1.3077,0.4615,1.0
+look,1,False,0,13,13,False,True,0,0.0,0.0,2,1.3,0.4583,1.0
+lot,1,False,0,12,12,False,True,0,0.0,0.0,3,1.3333,0.6667,1.0
+love,1,False,0,13,13,False,True,0,0.0,0.0,3,1.3,0.6403,1.0
+major,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+makes,1,False,0,12,12,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+making,1,False,0,20,20,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+malik,1,False,0,12,12,False,True,0,0.0,0.0,7,6.0,1.0,1.0
+man,1,False,0,25,25,False,True,0,0.0,0.0,4,1.7857,0.9395,1.0
+material,1,False,0,12,12,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+matter,1,False,0,15,15,False,True,0,0.0,0.0,3,1.5,0.6708,1.0
+maybe,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+mayor,1,False,0,10,10,False,True,0,0.0,0.0,5,2.0,1.5492,1.0
+mean,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+meat,1,False,0,11,11,False,True,0,0.0,0.0,10,5.5,4.5,1.0
+media,1,False,0,27,27,False,True,0,0.0,0.0,3,1.4211,0.674,1.0
+member,1,False,0,10,10,False,True,0,0.0,0.0,3,1.4286,0.7284,1.0
+members,1,False,0,16,16,False,True,0,0.0,0.0,3,1.3333,0.6236,1.0
+men,1,False,0,21,21,False,True,0,0.0,0.0,3,1.3125,0.583,1.0
+message,1,False,0,14,14,False,True,0,0.0,0.0,3,1.2727,0.6166,1.0
+middle,1,False,0,19,19,False,True,0,0.0,0.0,3,1.4615,0.6343,1.0
+military,1,False,0,14,14,False,True,0,0.0,0.0,5,2.0,1.3093,1.0
+million,1,False,0,53,53,False,True,0,0.0,0.0,11,3.5333,3.5188,1.0
+millions,1,False,0,12,12,False,True,0,0.0,0.0,3,1.2,0.6,1.0
+mind,1,False,0,12,12,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+mohamud,1,False,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+monday,1,False,0,11,11,False,True,0,0.0,0.0,4,1.5714,1.0498,1.0
+money,1,False,0,34,34,False,True,0,0.0,0.0,6,1.7,1.2689,1.0
+month,1,False,0,19,19,False,True,0,0.0,0.0,2,1.4615,0.4985,1.0
+months,1,False,0,30,30,False,True,0,0.0,0.0,17,2.3077,4.2496,1.0
+mother,1,False,0,28,28,False,True,0,0.0,0.0,5,1.8667,1.2037,1.0
+mr,1,False,0,32,32,False,True,0,0.0,0.0,19,4.0,5.7663,1.0
+muslim,1,False,0,27,27,False,True,0,0.0,0.0,8,2.4545,2.4258,1.0
+muslims,1,False,0,11,11,False,True,0,0.0,0.0,6,1.8333,1.8634,1.0
+na,1,False,0,15,15,False,True,0,0.0,0.0,8,3.0,2.7568,1.0
+named,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+nation,1,False,0,38,38,False,True,0,0.0,0.0,4,1.52,0.7547,1.0
+national,1,False,0,41,41,False,True,0,0.0,0.0,12,1.9524,2.38,1.0
+nations,1,False,0,13,13,False,True,0,0.0,0.0,5,2.1667,1.4625,1.0
+nearly,1,False,0,12,12,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+need,1,False,0,17,17,False,True,0,0.0,0.0,2,1.1333,0.3399,1.0
+new,1,False,0,84,84,False,True,0,0.0,0.0,6,1.9091,1.3787,1.0
+news,1,False,0,64,64,False,True,0,0.0,0.0,4,1.3333,0.6872,1.0
+night,1,False,0,14,14,False,True,0,0.0,0.0,2,1.2727,0.4454,1.0
+non,1,False,0,19,19,False,True,0,0.0,0.0,4,1.7273,0.9621,1.0
+north,1,False,0,10,10,False,True,0,0.0,0.0,2,1.4286,0.4949,1.0
+nuclear,1,False,0,17,17,False,True,0,0.0,0.0,8,4.25,3.2692,1.0
+number,1,False,0,13,13,False,True,0,0.0,0.0,2,1.0833,0.2764,1.0
+numbers,1,False,0,15,15,False,True,0,0.0,0.0,5,1.5,1.2042,1.0
+obama,1,False,0,109,109,False,True,0,0.0,0.0,11,2.9459,2.7108,1.0
+office,1,False,0,29,29,False,True,0,0.0,0.0,5,1.5263,1.0939,1.0
+officer,1,False,0,11,11,False,True,0,0.0,0.0,5,2.75,1.479,1.0
+officers,1,False,0,14,14,False,True,0,0.0,0.0,7,2.0,2.0702,1.0
+official,1,False,0,16,16,False,True,0,0.0,0.0,3,1.3333,0.6236,1.0
+officials,1,False,0,32,32,False,True,0,0.0,0.0,5,2.2857,1.3325,1.0
+old,1,False,0,37,37,False,True,0,0.0,0.0,5,1.7619,1.1508,1.0
+open,1,False,0,22,22,False,True,0,0.0,0.0,5,1.8333,1.2134,1.0
+order,1,False,0,16,16,False,True,0,0.0,0.0,3,1.4545,0.6556,1.0
+organization,1,False,0,11,11,False,True,0,0.0,0.0,4,1.5714,1.0498,1.0
+organizations,1,False,0,15,15,False,True,0,0.0,0.0,4,1.6667,1.0541,1.0
+page,1,False,0,21,21,False,True,0,0.0,0.0,4,1.75,1.0104,1.0
+parenthood,1,False,0,34,34,False,True,0,0.0,0.0,20,8.5,7.2284,1.0
+parents,1,False,0,35,35,False,True,0,0.0,0.0,8,3.1818,2.5519,1.0
+party,1,False,0,15,15,False,True,0,0.0,0.0,3,1.3636,0.6428,1.0
+past,1,False,0,15,15,False,True,0,0.0,0.0,2,1.0714,0.2575,1.0
+pay,1,False,0,11,11,False,True,0,0.0,0.0,4,1.5714,1.0498,1.0
+people,1,False,0,105,105,False,True,0,0.0,0.0,7,1.9091,1.2688,1.0
+percent,1,False,0,29,29,False,True,0,0.0,0.0,6,2.0714,1.6675,1.0
+personal,1,False,0,12,12,False,True,0,0.0,0.0,5,1.7143,1.3851,1.0
+peymani,1,False,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+place,1,False,0,16,16,False,True,0,0.0,0.0,2,1.2308,0.4213,1.0
+plan,1,False,0,21,21,False,True,0,0.0,0.0,3,1.75,0.9242,1.0
+planned,1,False,0,32,32,False,True,0,0.0,0.0,18,6.4,6.4992,1.0
+plans,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+point,1,False,0,21,21,False,True,0,0.0,0.0,2,1.3125,0.4635,1.0
+points,1,False,0,12,12,False,True,0,0.0,0.0,6,1.7143,1.7496,1.0
+police,1,False,0,56,56,False,True,0,0.0,0.0,17,4.0,4.4401,1.0
+policies,1,False,0,20,20,False,True,0,0.0,0.0,5,1.6667,1.1785,1.0
+policy,1,False,0,24,24,False,True,0,0.0,0.0,4,1.8462,1.0263,1.0
+political,1,False,0,31,31,False,True,0,0.0,0.0,4,1.6316,0.8712,1.0
+politics,1,False,0,13,13,False,True,0,0.0,0.0,4,1.625,1.111,1.0
+poor,1,False,0,10,10,False,True,0,0.0,0.0,5,1.6667,1.4907,1.0
+population,1,False,0,15,15,False,True,0,0.0,0.0,6,1.875,1.6154,1.0
+possess,1,False,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+possession,1,False,0,15,15,False,True,0,0.0,0.0,10,3.0,3.5214,1.0
+post,1,False,0,24,24,False,True,0,0.0,0.0,8,1.7143,1.79,1.0
+posted,1,False,0,11,11,False,True,0,0.0,0.0,3,1.5714,0.7284,1.0
+power,1,False,0,11,11,False,True,0,0.0,0.0,2,1.1,0.3,1.0
+president,1,False,0,71,71,False,True,0,0.0,0.0,8,1.9722,1.7398,1.0
+presidential,1,False,0,24,24,False,True,0,0.0,0.0,4,1.5,0.866,1.0
+press,1,False,0,15,15,False,True,0,0.0,0.0,3,1.3636,0.6428,1.0
+previously,1,False,0,13,13,False,True,0,0.0,0.0,2,1.0833,0.2764,1.0
+prison,1,False,0,34,34,False,True,0,0.0,0.0,22,4.8571,7.12,1.0
+private,1,False,0,13,13,False,True,0,0.0,0.0,4,1.4444,0.9558,1.0
+problem,1,False,0,18,18,False,True,0,0.0,0.0,4,1.3846,0.9231,1.0
+professor,1,False,0,22,22,False,True,0,0.0,0.0,10,2.2,2.6758,1.0
+professors,1,False,0,12,12,False,True,0,0.0,0.0,7,4.0,2.1602,1.0
+program,1,False,0,26,26,False,True,0,0.0,0.0,13,2.8889,3.6952,1.0
+project,1,False,0,12,12,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+provide,1,False,0,14,14,False,True,0,0.0,0.0,3,1.5556,0.6849,1.0
+provided,1,False,0,11,11,False,True,0,0.0,0.0,7,2.2,2.4,1.0
+public,1,False,0,50,50,False,True,0,0.0,0.0,6,1.9231,1.2986,1.0
+published,1,False,0,11,11,False,True,0,0.0,0.0,4,1.5714,1.0498,1.0
+question,1,False,0,16,16,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+questions,1,False,0,16,16,False,True,0,0.0,0.0,3,1.3333,0.6236,1.0
+race,1,False,0,15,15,False,True,0,0.0,0.0,5,2.1429,1.807,1.0
+racial,1,False,0,13,13,False,True,0,0.0,0.0,4,1.8571,1.1249,1.0
+racism,1,False,0,19,19,False,True,0,0.0,0.0,11,3.8,3.763,1.0
+racist,1,False,0,12,12,False,True,0,0.0,0.0,5,1.5,1.3229,1.0
+rates,1,False,0,10,10,False,True,0,0.0,0.0,4,2.0,1.2649,1.0
+read,1,False,0,16,16,False,True,0,0.0,0.0,3,1.3333,0.6236,1.0
+real,1,False,0,14,14,False,True,0,0.0,0.0,3,1.4,0.6633,1.0
+reason,1,False,0,16,16,False,True,0,0.0,0.0,3,1.1429,0.5151,1.0
+received,1,False,0,25,25,False,True,0,0.0,0.0,4,1.5625,0.8638,1.0
+recent,1,False,0,12,12,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+recently,1,False,0,12,12,False,True,0,0.0,0.0,2,1.0909,0.2875,1.0
+reform,1,False,0,20,20,False,True,0,0.0,0.0,4,2.0,1.0,1.0
+refugee,1,False,0,13,13,False,True,0,0.0,0.0,3,1.8571,0.833,1.0
+refugees,1,False,0,25,25,False,True,0,0.0,0.0,8,3.125,2.4717,1.0
+related,1,False,0,10,10,False,True,0,0.0,0.0,4,1.6667,1.1055,1.0
+relations,1,False,0,18,18,False,True,0,0.0,0.0,4,1.8,1.1662,1.0
+release,1,False,0,36,36,False,True,0,0.0,0.0,22,3.6,6.1677,1.0
+released,1,False,0,31,31,False,True,0,0.0,0.0,9,2.0667,2.5421,1.0
+religious,1,False,0,12,12,False,True,0,0.0,0.0,3,1.3333,0.6667,1.0
+rep,1,False,0,15,15,False,True,0,0.0,0.0,8,2.5,2.5658,1.0
+report,1,False,0,36,36,False,True,0,0.0,0.0,5,1.7143,1.2399,1.0
+reported,1,False,0,24,24,False,True,0,0.0,0.0,3,1.2632,0.6359,1.0
+reports,1,False,0,13,13,False,True,0,0.0,0.0,3,1.3,0.6403,1.0
+representatives,1,False,0,10,10,False,True,0,0.0,0.0,4,1.4286,1.0498,1.0
+republican,1,False,0,36,36,False,True,0,0.0,0.0,7,1.8947,1.5524,1.0
+republicans,1,False,0,15,15,False,True,0,0.0,0.0,4,1.875,1.0533,1.0
+required,1,False,0,11,11,False,True,0,0.0,0.0,3,1.375,0.696,1.0
+response,1,False,0,12,12,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+right,1,False,0,40,40,False,True,0,0.0,0.0,6,1.5385,1.0824,1.0
+rights,1,False,0,37,37,False,True,0,0.0,0.0,7,2.0556,1.6149,1.0
+risk,1,False,0,12,12,False,True,0,0.0,0.0,3,1.5,0.7071,1.0
+run,1,False,0,15,15,False,True,0,0.0,0.0,3,1.25,0.5951,1.0
+running,1,False,0,11,11,False,True,0,0.0,0.0,4,1.375,0.9922,1.0
+ryan,1,False,0,37,37,False,True,0,0.0,0.0,22,12.3333,8.6538,1.0
+safety,1,False,0,10,10,False,True,0,0.0,0.0,3,1.4286,0.7284,1.0
+said,1,False,0,189,189,False,True,0,0.0,0.0,11,2.9077,2.4728,1.0
+san,1,False,0,30,30,False,True,0,0.0,0.0,7,2.7273,2.0929,1.0
+saying,1,False,0,26,26,False,True,0,0.0,0.0,2,1.3684,0.4824,1.0
+says,1,False,0,52,52,False,True,0,0.0,0.0,8,1.7333,1.5478,1.0
+school,1,False,0,31,31,False,True,0,0.0,0.0,8,2.2143,1.78,1.0
+second,1,False,0,13,13,False,True,0,0.0,0.0,2,1.3,0.4583,1.0
+secretary,1,False,0,27,27,False,True,0,0.0,0.0,11,2.25,2.7726,1.0
+security,1,False,0,22,22,False,True,0,0.0,0.0,3,1.375,0.5995,1.0
+seen,1,False,0,12,12,False,True,0,0.0,0.0,2,1.0909,0.2875,1.0
+senate,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+sentence,1,False,0,25,25,False,True,0,0.0,0.0,22,6.25,9.0933,1.0
+services,1,False,0,18,18,False,True,0,0.0,0.0,4,1.8,1.077,1.0
+set,1,False,0,15,15,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+sex,1,False,0,21,21,False,True,0,0.0,0.0,7,2.625,2.3419,1.0
+sexual,1,False,0,11,11,False,True,0,0.0,0.0,6,2.2,1.9391,1.0
+sharpton,1,False,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+shaun,1,False,0,19,19,False,True,0,0.0,0.0,17,6.3333,7.5425,1.0
+sheriff,1,False,0,10,10,False,True,0,0.0,0.0,6,5.0,1.0,1.0
+shot,1,False,0,11,11,False,True,0,0.0,0.0,2,1.1,0.3,1.0
+shows,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+signed,1,False,0,14,14,False,True,0,0.0,0.0,6,1.5556,1.5713,1.0
+sister,1,False,0,22,22,False,True,0,0.0,0.0,18,5.5,7.2284,1.0
+small,1,False,0,13,13,False,True,0,0.0,0.0,3,1.3,0.6403,1.0
+social,1,False,0,16,16,False,True,0,0.0,0.0,3,1.4545,0.6556,1.0
+son,1,False,0,12,12,False,True,0,0.0,0.0,4,1.7143,1.0302,1.0
+space,1,False,0,14,14,False,True,0,0.0,0.0,8,3.5,2.8723,1.0
+speaker,1,False,0,14,14,False,True,0,0.0,0.0,11,3.5,4.3301,1.0
+spending,1,False,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+spent,1,False,0,19,19,False,True,0,0.0,0.0,7,2.375,2.1759,1.0
+st,1,False,0,11,11,False,True,0,0.0,0.0,4,1.8333,1.0672,1.0
+staff,1,False,0,16,16,False,True,0,0.0,0.0,5,2.2857,1.7496,1.0
+stand,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+standards,1,False,0,12,12,False,True,0,0.0,0.0,2,1.0909,0.2875,1.0
+started,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+state,1,False,0,106,106,False,True,0,0.0,0.0,9,2.3556,1.6621,1.0
+statement,1,False,0,23,23,False,True,0,0.0,0.0,4,1.3529,0.7624,1.0
+states,1,False,0,54,54,False,True,0,0.0,0.0,5,1.6875,0.9164,1.0
+status,1,False,0,11,11,False,True,0,0.0,0.0,2,1.375,0.4841,1.0
+stop,1,False,0,15,15,False,True,0,0.0,0.0,2,1.0714,0.2575,1.0
+story,1,False,0,24,24,False,True,0,0.0,0.0,3,1.7143,0.7954,1.0
+street,1,False,0,12,12,False,True,0,0.0,0.0,3,1.5,0.7071,1.0
+student,1,False,0,41,41,False,True,0,0.0,0.0,22,5.125,7.0256,1.0
+students,1,False,0,76,76,False,True,0,0.0,0.0,19,4.75,5.391,1.0
+studies,1,False,0,11,11,False,True,0,0.0,0.0,3,1.5714,0.7284,1.0
+study,1,False,0,10,10,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+supervised,1,False,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+support,1,False,0,32,32,False,True,0,0.0,0.0,6,2.0,1.5411,1.0
+sure,1,False,0,19,19,False,True,0,0.0,0.0,2,1.1875,0.3903,1.0
+sustainable,1,False,0,10,10,False,True,0,0.0,0.0,9,5.0,4.0,1.0
+sweden,1,False,0,10,10,False,True,0,0.0,0.0,9,5.0,4.0,1.0
+syndrome,1,False,0,17,17,False,True,0,0.0,0.0,17,17.0,0.0,1.0
+syria,1,False,0,12,12,False,True,0,0.0,0.0,4,1.7143,1.1606,1.0
+syrian,1,False,0,16,16,False,True,0,0.0,0.0,10,4.0,3.5355,1.0
+system,1,False,0,18,18,False,True,0,0.0,0.0,4,1.6364,0.9791,1.0
+taken,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+taking,1,False,0,13,13,False,True,0,0.0,0.0,2,1.0833,0.2764,1.0
+target,1,False,0,11,11,False,True,0,0.0,0.0,8,2.75,3.0311,1.0
+taxpayer,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+taxpayers,1,False,0,10,10,False,True,0,0.0,0.0,3,1.6667,0.7454,1.0
+term,1,False,0,11,11,False,True,0,0.0,0.0,2,1.375,0.4841,1.0
+terrorism,1,False,0,10,10,False,True,0,0.0,0.0,2,1.4286,0.4949,1.0
+terrorist,1,False,0,37,37,False,True,0,0.0,0.0,12,2.8462,2.8782,1.0
+terrorists,1,False,0,19,19,False,True,0,0.0,0.0,4,2.1111,0.9938,1.0
+texas,1,False,0,27,27,False,True,0,0.0,0.0,12,3.375,4.1814,1.0
+theme,1,False,0,38,38,False,True,0,0.0,0.0,38,38.0,0.0,1.0
+thing,1,False,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+things,1,False,0,15,15,False,True,0,0.0,0.0,5,1.5,1.2042,1.0
+think,1,False,0,43,43,False,True,0,0.0,0.0,6,1.4828,1.0042,1.0
+threat,1,False,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+thursday,1,False,0,15,15,False,True,0,0.0,0.0,4,1.25,0.8292,1.0
+time,1,False,0,70,70,False,True,0,0.0,0.0,4,1.5217,0.7729,1.0
+times,1,False,0,27,27,False,True,0,0.0,0.0,7,2.0769,1.5423,1.0
+today,1,False,0,25,25,False,True,0,0.0,0.0,2,1.1364,0.3432,1.0
+told,1,False,0,53,53,False,True,0,0.0,0.0,4,1.4722,0.7633,1.0
+took,1,False,0,23,23,False,True,0,0.0,0.0,4,1.2778,0.7307,1.0
+total,1,False,0,12,12,False,True,0,0.0,0.0,3,1.2,0.6,1.0
+training,1,False,0,14,14,False,True,0,0.0,0.0,6,2.3333,1.6997,1.0
+trial,1,False,0,10,10,False,True,0,0.0,0.0,5,2.0,1.5492,1.0
+trump,1,False,0,36,36,False,True,0,0.0,0.0,10,2.7692,2.4543,1.0
+trying,1,False,0,13,13,False,True,0,0.0,0.0,2,1.3,0.4583,1.0
+turned,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+ucsb,1,False,0,20,20,False,True,0,0.0,0.0,20,20.0,0.0,1.0
+understand,1,False,0,12,12,False,True,0,0.0,0.0,4,1.5,1.0,1.0
+union,1,False,0,11,11,False,True,0,0.0,0.0,5,1.8333,1.4625,1.0
+united,1,False,0,46,46,False,True,0,0.0,0.0,8,2.0,1.8415,1.0
+university,1,False,0,31,31,False,True,0,0.0,0.0,7,2.5833,2.019,1.0
+use,1,False,0,18,18,False,True,0,0.0,0.0,4,1.5,0.9574,1.0
+values,1,False,0,10,10,False,True,0,0.0,0.0,4,1.6667,1.1055,1.0
+ve,1,False,0,25,25,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+video,1,False,0,42,42,False,True,0,0.0,0.0,5,1.8261,1.1288,1.0
+violate,1,False,0,10,10,False,True,0,0.0,0.0,6,3.3333,1.8856,1.0
+violent,1,False,0,14,14,False,True,0,0.0,0.0,4,1.2727,0.8624,1.0
+visa,1,False,0,23,23,False,True,0,0.0,0.0,14,5.75,4.9181,1.0
+visit,1,False,0,11,11,False,True,0,0.0,0.0,8,3.6667,3.0912,1.0
+vote,1,False,0,13,13,False,True,0,0.0,0.0,5,1.8571,1.4569,1.0
+voters,1,False,0,13,13,False,True,0,0.0,0.0,2,1.3,0.4583,1.0
+want,1,False,0,55,55,False,True,0,0.0,0.0,13,1.8333,2.2373,1.0
+wanted,1,False,0,15,15,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+war,1,False,0,15,15,False,True,0,0.0,0.0,4,1.6667,1.0541,1.0
+washington,1,False,0,35,35,False,True,0,0.0,0.0,3,1.3462,0.6166,1.0
+watch,1,False,0,13,13,False,True,0,0.0,0.0,4,1.3,0.9,1.0
+waters,1,False,0,11,11,False,True,0,0.0,0.0,8,5.5,2.5,1.0
+way,1,False,0,33,33,False,True,0,0.0,0.0,2,1.1786,0.383,1.0
+website,1,False,0,18,18,False,True,0,0.0,0.0,3,1.3846,0.7378,1.0
+wednesday,1,False,0,16,16,False,True,0,0.0,0.0,3,1.4545,0.6556,1.0
+week,1,False,0,26,26,False,True,0,0.0,0.0,5,1.4444,1.1167,1.0
+wells,1,False,0,14,14,False,True,0,0.0,0.0,13,7.0,6.0,1.0
+went,1,False,0,20,20,False,True,0,0.0,0.0,3,1.25,0.559,1.0
+western,1,False,0,12,12,False,True,0,0.0,0.0,5,3.0,1.5811,1.0
+white,1,False,0,98,98,False,True,0,0.0,0.0,28,4.2609,5.7877,1.0
+wil,1,False,0,12,12,False,True,0,0.0,0.0,12,12.0,0.0,1.0
+win,1,False,0,11,11,False,True,0,0.0,0.0,4,1.5714,1.0498,1.0
+woman,1,False,0,15,15,False,True,0,0.0,0.0,2,1.3636,0.481,1.0
+women,1,False,0,40,40,False,True,0,0.0,0.0,6,2.0,1.5811,1.0
+won,1,False,0,13,13,False,True,0,0.0,0.0,2,1.1818,0.3857,1.0
+wonder,1,False,0,11,11,False,True,0,0.0,0.0,3,1.8333,0.8975,1.0
+work,1,False,0,26,26,False,True,0,0.0,0.0,5,1.625,1.0533,1.0
+workers,1,False,0,13,13,False,True,0,0.0,0.0,8,4.3333,2.8674,1.0
+working,1,False,0,19,19,False,True,0,0.0,0.0,2,1.1176,0.3222,1.0
+world,1,False,0,33,33,False,True,0,0.0,0.0,3,1.375,0.6333,1.0
+wrote,1,False,0,22,22,False,True,0,0.0,0.0,3,1.5714,0.8207,1.0
+year,1,False,0,79,79,False,True,0,0.0,0.0,5,2.1351,1.3589,1.0
+years,1,False,0,62,62,False,True,0,0.0,0.0,21,1.7714,3.3303,1.0
+yes,1,False,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+york,1,False,0,18,18,False,True,0,0.0,0.0,6,1.6364,1.4316,1.0
+young,1,False,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+000 or,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+000 people,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+10 000,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+10 years,2,True,0,14,14,False,True,0,0.0,0.0,13,7.0,6.0,1.0
+18 15,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+240 months,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+28 2015,2,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+able to,2,True,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+access to,2,True,0,7,7,False,True,0,0.0,0.0,4,2.3333,1.2472,1.0
+according to,2,True,0,62,62,False,True,0,0.0,0.0,5,1.7222,0.9606,1.0
+account hrod17,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+al qaeda,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+americans are,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+an effort,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+an email,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+an expert,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+an idea,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+an interview,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+and women,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+announced that,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+appear to,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+appears to,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+apply to,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+as result,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+as secretary,2,True,0,9,9,False,True,0,0.0,0.0,7,3.0,2.8284,1.0
+asian american,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+asked him,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+at ucsb,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+attempt to,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+attempting to,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+bank of,2,True,0,6,6,False,True,0,0.0,0.0,4,3.0,1.0,1.0
+barack obama,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+based on,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+bc racism,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+be released,2,True,0,9,9,False,True,0,0.0,0.0,6,2.25,2.1651,1.0
+bernie sanders,2,True,0,6,6,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+bill clinton,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+black lives,2,True,0,11,11,False,True,0,0.0,0.0,3,1.8333,0.8975,1.0
+breitbart news,2,True,0,16,16,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+breitbart texas,2,True,0,9,9,False,True,0,0.0,0.0,6,3.0,2.1602,1.0
+bush said,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+called for,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+called the,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+campus reform,2,True,0,17,17,False,True,0,0.0,0.0,6,2.8333,1.5723,1.0
+center for,2,True,0,6,6,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+change the,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+charged with,2,True,0,8,8,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+childhood cancer,2,True,0,11,11,False,True,0,0.0,0.0,11,11.0,0.0,1.0
+children are,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+christian minorities,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+city of,2,True,0,8,8,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+civil rights,2,True,0,11,11,False,True,0,0.0,0.0,3,2.2,0.7483,1.0
+claims that,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+clinton personal,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+clintonemail com,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+cocaine base,2,True,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+come to,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+community in,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+commutation grant,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+commuted to,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+conspiracy to,2,True,0,15,15,False,True,0,0.0,0.0,15,15.0,0.0,1.0
+continues to,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+created by,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+daily caller,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+de blasio,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+dead broke,2,True,0,5,5,False,True,0,0.0,0.0,3,2.5,0.5,1.0
+decision to,2,True,0,9,9,False,True,0,0.0,0.0,4,1.8,1.1662,1.0
+dedicated to,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+demand that,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+demand the,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+department of,2,True,0,15,15,False,True,0,0.0,0.0,3,1.25,0.5951,1.0
+department to,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+despite the,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+didn want,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+director of,2,True,0,19,19,False,True,0,0.0,0.0,3,1.1176,0.4706,1.0
+distribute cocaine,2,True,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+distribution of,2,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+district of,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+don know,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+donald trump,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+down syndrome,2,True,0,19,19,False,True,0,0.0,0.0,19,19.0,0.0,1.0
+dozens of,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+earlier this,2,True,0,8,8,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+ed mezvinsky,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+effort to,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+email account,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+end of,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+enforcement officials,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+eradicate bc,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+europe descent,2,True,0,15,15,False,True,0,0.0,0.0,15,15.0,0.0,1.0
+example of,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+expected to,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+expire on,2,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+failed to,2,True,0,7,7,False,True,0,0.0,0.0,5,2.3333,1.8856,1.0
+federal government,2,True,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+flower of,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+focus on,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+following the,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+food and,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+for comment,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+for example,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+for president,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+for women,2,True,0,9,9,False,True,0,0.0,0.0,5,1.8,1.6,1.0
+foreign workers,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+forms of,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+fox news,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+gabriel valley,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+going on,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+going to,2,True,0,25,25,False,True,0,0.0,0.0,5,1.6667,1.075,1.0
+government has,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+graham said,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+grant prison,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+group of,2,True,0,8,8,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+handful of,2,True,0,6,6,False,True,0,0.0,0.0,4,2.0,1.4142,1.0
+hands of,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+has said,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+have given,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+he got,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+he said,2,True,0,29,29,False,True,0,0.0,0.0,4,1.381,0.7854,1.0
+health and,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+helm 15,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+high school,2,True,0,7,7,False,True,0,0.0,0.0,3,1.75,0.8292,1.0
+hillary clinton,2,True,0,23,23,False,True,0,0.0,0.0,7,1.9167,1.754,1.0
+his brother,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+his father,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+his mother,2,True,0,7,7,False,True,0,0.0,0.0,3,1.75,0.8292,1.0
+his parents,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+his wife,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+history of,2,True,0,9,9,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+homeland security,2,True,0,8,8,False,True,0,0.0,0.0,3,1.3333,0.7454,1.0
+house of,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+hrod17 clintonemail,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+huffington post,2,True,0,10,10,False,True,0,0.0,0.0,7,2.5,2.5981,1.0
+human rights,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+hundreds of,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+illegal alien,2,True,0,8,8,False,True,0,0.0,0.0,4,2.0,1.2247,1.0
+illegal immigrant,2,True,0,8,8,False,True,0,0.0,0.0,6,2.6667,2.357,1.0
+illegal immigrants,2,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+immigration and,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+imprisonment 10,2,True,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+in 2012,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in 2013,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in 2014,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+in america,2,True,0,11,11,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in blanket,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+in federal,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+in new,2,True,0,9,9,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in order,2,True,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+in prison,2,True,0,6,6,False,True,0,0.0,0.0,2,2.0,0.0,1.0
+in response,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in san,2,True,0,9,9,False,True,0,0.0,0.0,3,1.5,0.7638,1.0
+in statement,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in syria,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+in washington,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+including the,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+individuals who,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+inspector general,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+instead of,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+intent to,2,True,0,18,18,False,True,0,0.0,0.0,16,6.0,7.0711,1.0
+interested in,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+interview with,2,True,0,8,8,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+islamic state,2,True,0,13,13,False,True,0,0.0,0.0,6,3.25,1.9203,1.0
+it turns,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+jade helm,2,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+july 28,2,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+justice department,2,True,0,9,9,False,True,0,0.0,0.0,2,1.2857,0.4518,1.0
+kind of,2,True,0,8,8,False,True,0,0.0,0.0,3,1.3333,0.7454,1.0
+king has,2,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+knew that,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+know that,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+lack of,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+last week,2,True,0,12,12,False,True,0,0.0,0.0,4,1.3333,0.9428,1.0
+last year,2,True,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+law enforcement,2,True,0,9,9,False,True,0,0.0,0.0,3,1.5,0.7638,1.0
+law school,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+liberty counsel,2,True,0,11,11,False,True,0,0.0,0.0,11,11.0,0.0,1.0
+life imprisonment,2,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+like the,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+list of,2,True,0,9,9,False,True,0,0.0,0.0,4,1.8,1.1662,1.0
+live in,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+lives matter,2,True,0,10,10,False,True,0,0.0,0.0,3,1.6667,0.7454,1.0
+lobbying activities,2,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+look at,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+lot of,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+make sure,2,True,0,6,6,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+marco rubio,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+material support,2,True,0,10,10,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+mcgregor said,2,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+member of,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+members of,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+men and,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+middle east,2,True,0,9,9,False,True,0,0.0,0.0,3,1.2857,0.6999,1.0
+million in,2,True,0,10,10,False,True,0,0.0,0.0,4,1.6667,1.1055,1.0
+million on,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+million to,2,True,0,9,9,False,True,0,0.0,0.0,7,3.0,2.8284,1.0
+millions of,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+money to,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+months imprisonment,2,True,0,16,16,False,True,0,0.0,0.0,16,16.0,0.0,1.0
+more opportunities,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+mr de,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+mr sharpton,2,True,0,12,12,False,True,0,0.0,0.0,12,12.0,0.0,1.0
+muslim brotherhood,2,True,0,9,9,False,True,0,0.0,0.0,7,3.0,2.8284,1.0
+my child,2,True,0,5,5,False,True,0,0.0,0.0,3,2.5,0.5,1.0
+need to,2,True,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+new hampshire,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+new york,2,True,0,18,18,False,True,0,0.0,0.0,6,1.6364,1.4316,1.0
+no longer,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+northern district,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+nuclear deal,2,True,0,9,9,False,True,0,0.0,0.0,5,3.0,1.633,1.0
+number of,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+obama administration,2,True,0,37,37,False,True,0,0.0,0.0,10,2.4667,2.3907,1.0
+obama and,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+of america,2,True,0,13,13,False,True,0,0.0,0.0,4,1.8571,1.1249,1.0
+of american,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+of christendom,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+of cocaine,2,True,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+of color,2,True,0,7,7,False,True,0,0.0,0.0,4,1.75,1.299,1.0
+of course,2,True,0,11,11,False,True,0,0.0,0.0,2,1.1,0.3,1.0
+of dollars,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+of europe,2,True,0,14,14,False,True,0,0.0,0.0,14,14.0,0.0,1.0
+of government,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+of homeland,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+of justice,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+of muslim,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+of people,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+of state,2,True,0,19,19,False,True,0,0.0,0.0,9,1.9,2.3854,1.0
+of students,2,True,0,7,7,False,True,0,0.0,0.0,5,2.3333,1.8856,1.0
+of texas,2,True,0,8,8,False,True,0,0.0,0.0,3,1.6,0.8,1.0
+of white,2,True,0,9,9,False,True,0,0.0,0.0,5,2.25,1.6394,1.0
+office of,2,True,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+old boy,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+on campus,2,True,0,7,7,False,True,0,0.0,0.0,3,1.75,0.8292,1.0
+on friday,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+on july,2,True,0,22,22,False,True,0,0.0,0.0,21,11.0,10.0,1.0
+on twitter,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+on wednesday,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+open borders,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+order to,2,True,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+our country,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+our nation,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+parts of,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+paul ryan,2,True,0,7,7,False,True,0,0.0,0.0,5,3.5,1.5,1.0
+pay for,2,True,0,6,6,False,True,0,0.0,0.0,4,2.0,1.4142,1.0
+people in,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+people to,2,True,0,9,9,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+people who,2,True,0,13,13,False,True,0,0.0,0.0,2,1.0833,0.2764,1.0
+percent of,2,True,0,15,15,False,True,0,0.0,0.0,4,1.875,1.2686,1.0
+personal email,2,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+pic twitter,2,True,0,8,8,False,True,0,0.0,0.0,2,1.6,0.4899,1.0
+pigs in,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+plan to,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+planned parenthood,2,True,0,34,34,False,True,0,0.0,0.0,20,8.5,7.2284,1.0
+plans to,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+police officer,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+police officers,2,True,0,9,9,False,True,0,0.0,0.0,6,3.0,2.1602,1.0
+possess with,2,True,0,9,9,False,True,0,0.0,0.0,9,9.0,0.0,1.0
+possession of,2,True,0,9,9,False,True,0,0.0,0.0,5,2.25,1.6394,1.0
+possession with,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+president obama,2,True,0,14,14,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+president of,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+presidential candidate,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+press release,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+prison sentence,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+public relations,2,True,0,7,7,False,True,0,0.0,0.0,4,2.3333,1.2472,1.0
+re going,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+read more,2,True,0,16,16,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+reason to,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+reports that,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+republican party,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+resource center,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+respond to,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+response to,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+responsible for,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+rest of,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+rights and,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+run for,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+safe space,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+said he,2,True,0,14,14,False,True,0,0.0,0.0,2,1.0769,0.2665,1.0
+said in,2,True,0,14,14,False,True,0,0.0,0.0,3,1.5556,0.6849,1.0
+said it,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+said she,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+said that,2,True,0,21,21,False,True,0,0.0,0.0,3,1.2353,0.5455,1.0
+said the,2,True,0,23,23,False,True,0,0.0,0.0,3,1.2778,0.6503,1.0
+said they,2,True,0,7,7,False,True,0,0.0,0.0,4,1.75,1.299,1.0
+said to,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+same sex,2,True,0,11,11,False,True,0,0.0,0.0,6,2.75,2.0463,1.0
+san francisco,2,True,0,13,13,False,True,0,0.0,0.0,8,4.3333,2.6247,1.0
+san gabriel,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+saying that,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+says he,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+secretary of,2,True,0,16,16,False,True,0,0.0,0.0,8,2.0,2.2913,1.0
+seen in,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+sentence 240,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+sentence commuted,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+sentence life,2,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+series of,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+served as,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+sex marriage,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+shared responsibility,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+shaun king,2,True,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+she said,2,True,0,12,12,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+she says,2,True,0,7,7,False,True,0,0.0,0.0,4,2.3333,1.2472,1.0
+shut down,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+so called,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+social media,2,True,0,6,6,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+some time,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+st louis,2,True,0,8,8,False,True,0,0.0,0.0,4,2.0,1.2247,1.0
+state and,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+state department,2,True,0,15,15,False,True,0,0.0,0.0,3,1.6667,0.8165,1.0
+state of,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+states and,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+states in,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+states to,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+student union,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+students in,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+students of,2,True,0,9,9,False,True,0,0.0,0.0,9,9.0,0.0,1.0
+students to,2,True,0,9,9,False,True,0,0.0,0.0,3,1.5,0.7638,1.0
+supervised release,2,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+support for,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+support to,2,True,0,8,8,False,True,0,0.0,0.0,5,2.6667,1.6997,1.0
+supreme court,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+sustainable development,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+ted cruz,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+terrorist groups,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+terrorist organizations,2,True,0,6,6,False,True,0,0.0,0.0,4,2.0,1.4142,1.0
+that children,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+that obama,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the administration,2,True,0,12,12,False,True,0,0.0,0.0,4,2.0,1.1547,1.0
+the agency,2,True,0,10,10,False,True,0,0.0,0.0,5,3.3333,1.2472,1.0
+the agreement,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the american,2,True,0,19,19,False,True,0,0.0,0.0,3,1.2667,0.5735,1.0
+the attack,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+the best,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+the bishops,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the black,2,True,0,8,8,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+the board,2,True,0,7,7,False,True,0,0.0,0.0,4,1.75,1.299,1.0
+the book,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the border,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+the case,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the center,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the child,2,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+the city,2,True,0,20,20,False,True,0,0.0,0.0,4,1.8182,1.1134,1.0
+the class,2,True,0,7,7,False,True,0,0.0,0.0,4,1.75,1.299,1.0
+the clinton,2,True,0,6,6,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+the college,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the country,2,True,0,25,25,False,True,0,0.0,0.0,3,1.3889,0.5906,1.0
+the course,2,True,0,7,7,False,True,0,0.0,0.0,4,2.3333,1.2472,1.0
+the current,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+the daily,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the deal,2,True,0,14,14,False,True,0,0.0,0.0,5,3.5,1.118,1.0
+the decision,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the defense,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the department,2,True,0,16,16,False,True,0,0.0,0.0,3,1.1429,0.5151,1.0
+the end,2,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+the epa,2,True,0,24,24,False,True,0,0.0,0.0,13,12.0,1.0,1.0
+the faith,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the family,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the father,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the fed,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the federal,2,True,0,14,14,False,True,0,0.0,0.0,3,1.2727,0.6166,1.0
+the fight,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+the flag,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the flower,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the future,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the gop,2,True,0,6,6,False,True,0,0.0,0.0,4,2.0,1.4142,1.0
+the government,2,True,0,21,21,False,True,0,0.0,0.0,5,2.1,1.3,1.0
+the group,2,True,0,9,9,False,True,0,0.0,0.0,2,1.2857,0.4518,1.0
+the holy,2,True,0,8,8,False,True,0,0.0,0.0,5,2.6667,1.6997,1.0
+the house,2,True,0,13,13,False,True,0,0.0,0.0,4,1.625,0.9922,1.0
+the huffington,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+the idea,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the immigration,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+the islamic,2,True,0,14,14,False,True,0,0.0,0.0,8,3.5,2.6926,1.0
+the justice,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+the latest,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the law,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the left,2,True,0,11,11,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the letter,2,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+the liberty,2,True,0,9,9,False,True,0,0.0,0.0,8,4.5,3.5,1.0
+the list,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the man,2,True,0,7,7,False,True,0,0.0,0.0,3,1.4,0.8,1.0
+the media,2,True,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the mexican,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the middle,2,True,0,15,15,False,True,0,0.0,0.0,3,1.5,0.6708,1.0
+the money,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the muslim,2,True,0,7,7,False,True,0,0.0,0.0,5,2.3333,1.8856,1.0
+the nation,2,True,0,19,19,False,True,0,0.0,0.0,4,1.4615,0.8427,1.0
+the national,2,True,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the new,2,True,0,26,26,False,True,0,0.0,0.0,6,1.4444,1.2121,1.0
+the news,2,True,0,13,13,False,True,0,0.0,0.0,2,1.1818,0.3857,1.0
+the northeast,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the nuclear,2,True,0,10,10,False,True,0,0.0,0.0,6,5.0,1.0,1.0
+the number,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the obama,2,True,0,38,38,False,True,0,0.0,0.0,10,2.2353,2.1836,1.0
+the office,2,True,0,6,6,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+the parents,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the past,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+the pentagon,2,True,0,5,5,False,True,0,0.0,0.0,3,2.5,0.5,1.0
+the people,2,True,0,11,11,False,True,0,0.0,0.0,3,1.2222,0.6285,1.0
+the point,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+the political,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the polls,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the poor,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+the president,2,True,0,14,14,False,True,0,0.0,0.0,3,1.75,0.6614,1.0
+the problem,2,True,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+the program,2,True,0,8,8,False,True,0,0.0,0.0,4,2.0,1.2247,1.0
+the progressive,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the public,2,True,0,11,11,False,True,0,0.0,0.0,4,1.5714,1.0498,1.0
+the question,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the reason,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the report,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+the republican,2,True,0,11,11,False,True,0,0.0,0.0,3,1.5714,0.7284,1.0
+the rest,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the right,2,True,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+the san,2,True,0,9,9,False,True,0,0.0,0.0,5,1.8,1.6,1.0
+the school,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the state,2,True,0,32,32,False,True,0,0.0,0.0,4,1.4545,0.782,1.0
+the story,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+the student,2,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+the syrian,2,True,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+the terrorist,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+the things,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+the time,2,True,0,10,10,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+the united,2,True,0,42,42,False,True,0,0.0,0.0,7,2.0,1.633,1.0
+the university,2,True,0,16,16,False,True,0,0.0,0.0,5,2.0,1.7321,1.0
+the video,2,True,0,15,15,False,True,0,0.0,0.0,3,1.5,0.6708,1.0
+the visa,2,True,0,8,8,False,True,0,0.0,0.0,5,4.0,1.0,1.0
+the washington,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+the waters,2,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+the white,2,True,0,26,26,False,True,0,0.0,0.0,6,1.8571,1.3553,1.0
+the world,2,True,0,19,19,False,True,0,0.0,0.0,2,1.2667,0.4422,1.0
+their children,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+theme an,2,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+these numbers,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+they don,2,True,0,8,8,False,True,0,0.0,0.0,3,1.3333,0.7454,1.0
+they want,2,True,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+think it,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+think of,2,True,0,8,8,False,True,0,0.0,0.0,5,2.0,1.7321,1.0
+this month,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+this week,2,True,0,9,9,False,True,0,0.0,0.0,3,1.2857,0.6999,1.0
+this year,2,True,0,13,13,False,True,0,0.0,0.0,3,1.4444,0.6849,1.0
+thousands of,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+threat to,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+time the,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+time to,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+to ask,2,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+to bring,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to campus,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+to change,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to come,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to consider,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+to create,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+to defend,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+to distribute,2,True,0,23,23,False,True,0,0.0,0.0,23,23.0,0.0,1.0
+to expire,2,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+to fill,2,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+to find,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to help,2,True,0,9,9,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to know,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to pay,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+to possess,2,True,0,9,9,False,True,0,0.0,0.0,9,9.0,0.0,1.0
+to protect,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+to provide,2,True,0,8,8,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+to release,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+to run,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+to sell,2,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+to state,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+to stop,2,True,0,7,7,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to wonder,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+to work,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+told the,2,True,0,11,11,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+trump is,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+try to,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+trying to,2,True,0,12,12,False,True,0,0.0,0.0,2,1.3333,0.4714,1.0
+turns out,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+twitter com,2,True,0,8,8,False,True,0,0.0,0.0,2,1.6,0.4899,1.0
+united nations,2,True,0,7,7,False,True,0,0.0,0.0,6,3.5,2.5,1.0
+united states,2,True,0,37,37,False,True,0,0.0,0.0,7,1.7619,1.3768,1.0
+university of,2,True,0,11,11,False,True,0,0.0,0.0,3,1.5714,0.7284,1.0
+use of,2,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+ve been,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+ve got,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+via breitbart,2,True,0,16,16,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+via campus,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+wall street,2,True,0,8,8,False,True,0,0.0,0.0,3,1.6,0.8,1.0
+want to,2,True,0,36,36,False,True,0,0.0,0.0,7,1.6364,1.3995,1.0
+wanted to,2,True,0,10,10,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+was arrested,2,True,0,5,5,False,True,0,0.0,0.0,2,1.6667,0.4714,1.0
+was found,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+washington post,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+way to,2,True,0,11,11,False,True,0,0.0,0.0,2,1.2222,0.4157,1.0
+we demand,2,True,0,9,9,False,True,0,0.0,0.0,9,9.0,0.0,1.0
+we didn,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+we don,2,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+we ve,2,True,0,9,9,False,True,0,0.0,0.0,2,1.5,0.5,1.0
+we want,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+wells fargo,2,True,0,14,14,False,True,0,0.0,0.0,13,7.0,6.0,1.0
+went on,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+went to,2,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+western district,2,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+what happened,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+white house,2,True,0,24,24,False,True,0,0.0,0.0,7,1.8462,1.6099,1.0
+white student,2,True,0,12,12,False,True,0,0.0,0.0,12,12.0,0.0,1.0
+white students,2,True,0,6,6,False,True,0,0.0,0.0,3,3.0,0.0,1.0
+will continue,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+willing to,2,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+with intent,2,True,0,14,14,False,True,0,0.0,0.0,14,14.0,0.0,1.0
+year old,2,True,0,27,27,False,True,0,0.0,0.0,5,1.9286,1.2797,1.0
+year the,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+years ago,2,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+years supervised,2,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+york times,2,True,0,8,8,False,True,0,0.0,0.0,6,2.6667,2.357,1.0
+you believe,2,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+you know,2,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+you ll,2,True,0,6,6,False,True,0,0.0,0.0,4,2.0,1.4142,1.0
+you think,2,True,0,11,11,False,True,0,0.0,0.0,5,1.8333,1.4625,1.0
+you want,2,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+10 years supervised,3,True,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+240 months imprisonment,3,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+according to the,3,True,0,19,19,False,True,0,0.0,0.0,3,1.1875,0.5266,1.0
+account hrod17 clintonemail,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+an effort to,3,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+as secretary of,3,True,0,9,9,False,True,0,0.0,0.0,7,3.0,2.8284,1.0
+at the end,3,True,0,8,8,False,True,0,0.0,0.0,2,1.1429,0.3499,1.0
+at the time,3,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+at the university,3,True,0,8,8,False,True,0,0.0,0.0,3,1.3333,0.7454,1.0
+bank of america,3,True,0,6,6,False,True,0,0.0,0.0,4,3.0,1.0,1.0
+black lives matter,3,True,0,9,9,False,True,0,0.0,0.0,3,1.5,0.7638,1.0
+clinton personal email,3,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+commutation grant prison,3,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+commuted to expire,3,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+conspiracy to distribute,3,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+conspiracy to possess,3,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+department of homeland,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+didn want to,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+director of the,3,True,0,10,10,False,True,0,0.0,0.0,3,1.25,0.6614,1.0
+distribute cocaine base,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+do you think,3,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+eradicate bc racism,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+expire on july,3,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+going to be,3,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+grant prison sentence,3,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+hillary clinton personal,3,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+hrod17 clintonemail com,3,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+imprisonment 10 years,3,True,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+in order to,3,True,0,10,10,False,True,0,0.0,0.0,2,1.1111,0.3143,1.0
+in response to,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in the country,3,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+in the middle,3,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in the new,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+in the united,3,True,0,14,14,False,True,0,0.0,0.0,3,1.2727,0.6166,1.0
+intent to distribute,3,True,0,16,16,False,True,0,0.0,0.0,16,16.0,0.0,1.0
+it turns out,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+jade helm 15,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+july 28 2015,3,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+law enforcement officials,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+life imprisonment 10,3,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+material support to,3,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+men and women,3,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+months imprisonment 10,3,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+mr de blasio,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+new york times,3,True,0,8,8,False,True,0,0.0,0.0,6,2.6667,2.357,1.0
+northern district of,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+of cocaine base,3,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+of europe descent,3,True,0,13,13,False,True,0,0.0,0.0,13,13.0,0.0,1.0
+of homeland security,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+of students of,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+of the nation,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+of the united,3,True,0,7,7,False,True,0,0.0,0.0,2,1.4,0.4899,1.0
+on july 28,3,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+on the white,3,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+percent of the,3,True,0,8,8,False,True,0,0.0,0.0,3,1.3333,0.7454,1.0
+pic twitter com,3,True,0,8,8,False,True,0,0.0,0.0,2,1.6,0.4899,1.0
+pigs in blanket,3,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+possess with intent,3,True,0,7,7,False,True,0,0.0,0.0,7,7.0,0.0,1.0
+possession with intent,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+president of the,3,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+prison sentence commuted,3,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+re going to,3,True,0,6,6,False,True,0,0.0,0.0,3,2.0,0.8165,1.0
+same sex marriage,3,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+san gabriel valley,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+secretary of state,3,True,0,15,15,False,True,0,0.0,0.0,8,2.1429,2.4159,1.0
+sentence 240 months,3,True,0,6,6,False,True,0,0.0,0.0,6,6.0,0.0,1.0
+sentence commuted to,3,True,0,22,22,False,True,0,0.0,0.0,22,22.0,0.0,1.0
+sentence life imprisonment,3,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+students of europe,3,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+the city of,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the department of,3,True,0,12,12,False,True,0,0.0,0.0,3,1.2,0.6,1.0
+the end of,3,True,0,7,7,False,True,0,0.0,0.0,2,1.1667,0.3727,1.0
+the federal government,3,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+the huffington post,3,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+the islamic state,3,True,0,10,10,False,True,0,0.0,0.0,6,3.3333,2.0548,1.0
+the justice department,3,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+the liberty counsel,3,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+the middle east,3,True,0,8,8,False,True,0,0.0,0.0,3,1.3333,0.7454,1.0
+the muslim brotherhood,3,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0
+the new york,3,True,0,10,10,False,True,0,0.0,0.0,6,2.0,2.0,1.0
+the nuclear deal,3,True,0,7,7,False,True,0,0.0,0.0,4,3.5,0.5,1.0
+the obama administration,3,True,0,34,34,False,True,0,0.0,0.0,10,2.2667,2.294,1.0
+the office of,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the republican party,3,True,0,6,6,False,True,0,0.0,0.0,3,1.5,0.866,1.0
+the rest of,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the san gabriel,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the state department,3,True,0,10,10,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+the state of,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+the united nations,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+the united states,3,True,0,37,37,False,True,0,0.0,0.0,7,1.7619,1.3768,1.0
+the university of,3,True,0,9,9,False,True,0,0.0,0.0,3,1.5,0.7638,1.0
+the white house,3,True,0,20,20,False,True,0,0.0,0.0,6,1.8182,1.4659,1.0
+they want to,3,True,0,9,9,False,True,0,0.0,0.0,2,1.125,0.3307,1.0
+to campus reform,3,True,0,5,5,False,True,0,0.0,0.0,2,1.25,0.433,1.0
+to distribute cocaine,3,True,0,10,10,False,True,0,0.0,0.0,10,10.0,0.0,1.0
+to expire on,3,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+to possess with,3,True,0,8,8,False,True,0,0.0,0.0,8,8.0,0.0,1.0
+to the obama,3,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+to the president,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+to the public,3,True,0,5,5,False,True,0,0.0,0.0,3,1.6667,0.9428,1.0
+to the united,3,True,0,6,6,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+united states to,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+via breitbart news,3,True,0,14,14,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+via campus reform,3,True,0,5,5,False,True,0,0.0,0.0,1,1.0,0.0,1.0
+want to do,3,True,0,6,6,False,True,0,0.0,0.0,2,1.2,0.4,1.0
+we demand that,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+western district of,3,True,0,5,5,False,True,0,0.0,0.0,5,5.0,0.0,1.0
+with down syndrome,3,True,0,9,9,False,True,0,0.0,0.0,9,9.0,0.0,1.0
+with intent to,3,True,0,14,14,False,True,0,0.0,0.0,14,14.0,0.0,1.0
+year old boy,3,True,0,5,5,False,True,0,0.0,0.0,4,2.5,1.5,1.0
+years supervised release,3,True,0,21,21,False,True,0,0.0,0.0,21,21.0,0.0,1.0
+you think of,3,True,0,6,6,False,True,0,0.0,0.0,5,3.0,2.0,1.0

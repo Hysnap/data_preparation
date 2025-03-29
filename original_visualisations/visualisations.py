@@ -178,9 +178,12 @@ def plot_hex_subjectivity():
 
     # Handle null and near-null values
     threshold = 0.001
-    filtered_df.loc[filtered_df["title_subjectivity"].abs() < threshold, "title_subjectivity"] = None
-    filtered_df.loc[filtered_df["article_subjectivity"].abs() < threshold, "article_subjectivity"] = None
-    filtered_df.dropna(subset=["title_subjectivity", "article_subjectivity"], how="all", inplace=True)
+    filtered_df.loc[filtered_df["title_subjectivity"].abs() < threshold,
+                    "title_subjectivity"] = None
+    filtered_df.loc[filtered_df["article_subjectivity"].abs() < threshold,
+                    "article_subjectivity"] = None
+    filtered_df = filtered_df.dropna(subset=["title_subjectivity",
+                                             "article_subjectivity"], how="all")
 
     # Create figure
     fig = plt.figure(figsize=(8, 8))
@@ -285,9 +288,9 @@ def plot_hex_charcounts():
                     "title_length"] = None
     filtered_df.loc[filtered_df["text_length"].abs() < threshold,
                     "text_length"] = None
-    filtered_df.dropna(subset=["title_length",
-                               "text_length"],
-                       how="all", inplace=True)
+    filtered_df = filtered_df.dropna(subset=["title_length",
+                                             "text_length"],
+                                    how="all")
 
     # Filter lengths
     filtered_df = filtered_df[(filtered_df["title_length"] < 1000) &

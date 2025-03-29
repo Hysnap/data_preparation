@@ -1,0 +1,9 @@
+a_requirement_gathering
+b_source_data
+c_data_extract_combine
+d_transform
+e_nlp_data_processing
+f_dashboard
+j_future_developments
+sl_nlp
+sl_utils

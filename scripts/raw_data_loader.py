@@ -1,4 +1,4 @@
-from c_data_extract_combine.ETL import dataload
+from scripts.pipeline_code import dataload
 
 def load_raw_data(flags: dict):
     if not flags.get("useprecombineddata"):

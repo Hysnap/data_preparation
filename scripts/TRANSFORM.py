@@ -10,10 +10,12 @@
 
     Functions:
     - classify_and_combine: This function adds label flags to the true and fake
-    dataframes, concatenates the true, fake, and test dataframes, and classifies
-    the media type of the title and article text. The function also extracts date
+    dataframes, concatenates the true, fake, and test dataframes,
+    and classifies
+    the media type of the title and article text.
+    The function also extracts date
     information from the date column, creates date features for use in future
-    models, and saves the cleaned and transformed data to a zip file.  
+    models, and saves the cleaned and transformed data to a zip file.
 """
 
 import pandas as pd
@@ -58,7 +60,7 @@ def classify_and_combine(true_df, fake_df, test_data_df):
                 f" dataframe: {combined_df.shape[0]}")
     # remove rows where text is identical
     logger.info("Remove rows where text is identical.")
-    combined_pre_clean.drop_duplicates(subset='text', inplace=True)
+    combined_pre_clean = combined_pre_clean.drop_duplicates(subset='text')
     # log the number of rows in the combined dataframe
     logger.info("Number of rows in combined dataframe"
                 " after removing"
@@ -88,7 +90,7 @@ def classify_and_combine(true_df, fake_df, test_data_df):
                 f" or text: {combined_pre_clean.shape[0]}")
     logger.info("Title and text column cleansing")
     # rename the text colum "article_text"
-    combined_pre_clean.rename(columns={"text": "article_text"}, inplace=True)
+    combined_pre_name = combined_pre_clean.rename(columns={"text": "article_text"})
     combined_pre_clean['title'] = (
         combined_pre_clean['title'].str.replace(r'[^\w\s]', ''))
     combined_pre_clean['article_text'] = (
@@ -277,7 +279,7 @@ def classify_and_combine(true_df, fake_df, test_data_df):
     logger.info("Date information extracted from date column")
     # drop unnecessary and blank columns
     logger.info("Drop unnecessary and blank columns")
-    combined_pre_clean.drop(['Column1',
+    combined_pre_clean = combined_pre_clean.drop(['Column1',
                              'subject2',
                              'count',
                              'date_str',
@@ -285,7 +287,7 @@ def classify_and_combine(true_df, fake_df, test_data_df):
                              'media_type_article',
                              'date'
                              ],
-                            axis=1, inplace=True)
+                            axis=1)
     # log the number of rows in the combined dataframe
     logger.info("Number of rows in combined dataframe"
                 f" after dropping columns: {combined_pre_clean.shape[0]}")

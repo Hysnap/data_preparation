@@ -7,19 +7,51 @@ from tqdm.auto import tqdm
 from joblib import Parallel, delayed
 from sklearn.feature_extraction.text import CountVectorizer
 import spacy
+import re
 
 # Load SpaCy model once globally
 nlp = spacy.load("en_core_web_sm", disable=["ner", "parser"])
 STOP_WORDS = nlp.Defaults.stop_words
 
 
+def compute_dynamic_threshold(n, num_rows):
+    """
+    Returns a dynamic min_count threshold based on n-gram size and dataset size.
+    """
+    min_fraction = {
+        1: 0.005,   # 0.5% for unigrams
+        2: 0.003,   # 0.3% for bigrams
+        3: 0.002    # 0.2% for trigrams
+    }
+    hard_floor = {
+        1: 10,
+        2: 5,
+        3: 3
+    }
+    frac = min_fraction.get(n, 0.002)
+    floor = hard_floor.get(n, 3)
+    return max(int(num_rows * frac), floor)
+
+
 def preprocess_texts_spacy(texts, batch_size=1000):
-    """Efficiently preprocess text list using spaCy with batching."""
+    """Preprocess text using SpaCy: preserve contractions, no lemmatization, remove non-word tokens."""
+    # Normalize smart quotes to plain apostrophes
+    texts = [text.replace("’", "'").replace("‘", "'") for text in texts]
+
     docs = nlp.pipe(texts, batch_size=batch_size)
-    return [
-        " ".join(token.lemma_ for token in doc if not token.is_stop and token.is_alpha)
-        for doc in docs
-    ]
+    cleaned_texts = []
+
+    for doc in docs:
+        tokens = []
+        for token in doc:
+            text = token.text.lower()
+            # keep words like "didn't", "shouldn't", "won't"
+            if re.fullmatch(r"[a-zA-Z]+('[a-zA-Z]+)?", text):
+                if not token.is_stop:  # optionally remove this line if you want to keep stopwords too
+                    tokens.append(text)
+        cleaned_texts.append(" ".join(tokens))
+
+    return cleaned_texts
 
 
 def safe_stats(array):
@@ -41,11 +73,10 @@ def compute_ngram_row(term, idx, X, is_real, is_dubious,
     count_dubious = dubious_counts.sum()
     total_count = count_real + count_dubious
 
-    if total_count < min_count_threshold:
+    if (n == 1 and total_count < min_count_threshold) or (n > 1 and total_count < 5):
         return None
-
-    if n > 1 and not any(base in vocab_filter for base in term.split()):
-        return None
+    # if n > 1 and not any(base in vocab_filter for base in term.split()):
+    #     return None
 
     if n == 1:
         vocab_filter.add(term)
@@ -82,29 +113,55 @@ def process_ngram(df, n, vocab_filter,
     progress_fn(f"🔍 Processing {n}-grams...")
 
     if n == 1:
-        df["__cleaned"] = preprocess_texts_spacy(df[text_column])
+        df = df.copy()
+        df.loc[:, "__cleaned"] = preprocess_texts_spacy(df[text_column])
         vectorizer = CountVectorizer()
         X = vectorizer.fit_transform(df["__cleaned"])
+        terms = vectorizer.get_feature_names_out()
+        term_indices = {term: i for i, term in enumerate(terms)}
     else:
+        # Initial n-gram vectorizer
         vectorizer = CountVectorizer(ngram_range=(n, n), stop_words=None)
         X = vectorizer.fit_transform(df[text_column])
+        terms = vectorizer.get_feature_names_out()
 
-    terms = vectorizer.get_feature_names_out()
-    term_indices = {term: i for i, term in enumerate(terms)}
+        # Stopword-based filtering
+        max_stop_words = n - 1
+        filtered_terms = [
+            term for term in terms
+            if sum(1 for word in term.split() if word in STOP_WORDS) <= max_stop_words
+        ]
 
+        progress_fn(f"🧹 Filtered {len(terms) - len(filtered_terms)} / {len(terms)} {n}-gram terms due to stopwords")
+
+        # Use the full X matrix and just filter term indices
+        term_indices = {
+            term: vectorizer.vocabulary_[term]
+            for term in filtered_terms if term in vectorizer.vocabulary_
+        }
+
+    # Label mask vectors
     is_real = df[label_column].values == 1
     is_dubious = df[label_column].values == 0
 
+    # Compute stats
+    dynamic_threshold = compute_dynamic_threshold(n, len(df))
+    progress_fn(f"📊 Using dynamic threshold: {dynamic_threshold} for {n}-grams ({len(df)} documents)")
+
     results = Parallel(n_jobs=n_jobs)(
         delayed(compute_ngram_row)(
-            term, idx, X, is_real,
-            is_dubious, n,
-            vocab_filter.copy(), min_count_threshold
+            term,
+            idx,
+            X,
+            is_real,
+            is_dubious,
+            n,
+            vocab_filter.copy(),
+            dynamic_threshold
         )
         for term, idx in tqdm(term_indices.items(),
                               desc=f"{n}-gram terms",
                               leave=False)
-        if term.isascii() and term.isalpha()
     )
 
     summary_rows = [r for r in results if r]
@@ -114,11 +171,14 @@ def process_ngram(df, n, vocab_filter,
 
     if summary_rows:
         summary_df = pd.DataFrame(summary_rows)
-        summary_df.to_csv(output_csv, mode='a',
-                          index=False, header=write_header)
+        summary_df.to_csv(output_csv,
+                          mode='a',
+                          index=False,
+                          header=write_header)
         progress_fn(f"✅ Appended {len(summary_rows)} {n}-grams to {output_csv}")
     else:
         progress_fn(f"⚠️ No {n}-grams met the threshold.")
+
 
 
 def generate_ngram_summary_csv(
@@ -130,7 +190,8 @@ def generate_ngram_summary_csv(
     progress_fn=print,
     min_count_threshold=25,
         n_jobs=4):
-    df[text_column] = df[text_column].astype(str).fillna("")
+    df = df.copy()  # ensures df is not a view/slice
+    df.loc[:, text_column] = df[text_column].astype(str).fillna("")
     os.makedirs(os.path.dirname(output_csv), exist_ok=True)
 
     if os.path.exists(output_csv):
@@ -140,8 +201,11 @@ def generate_ngram_summary_csv(
     write_header = True
 
     for n in range(ngram_range[0], ngram_range[1] + 1):
-        process_ngram(df, n, vocab_filter,
-                      text_column, label_column,
+        process_ngram(df,
+                      n,
+                      vocab_filter,
+                      text_column,
+                      label_column,
                       output_csv,
                       min_count_threshold,
                       write_header,
@@ -158,13 +222,21 @@ def run_full_ngram_pipeline(input_csv,
                             text_column="text",
                             label_column="label",
                             ngram_range=(1, 3),
-                            min_count_threshold=25,
+                            min_count_threshold=100,
+                            test=False,
                             n_jobs=4):
     def progress(msg):
         print(msg)
 
     print(f"📦 Loading data from {input_csv}...")
-    df = pd.read_csv(input_csv)
+    df = pd.read_csv(input_csv, low_memory=False)
+
+    # if test= True, create a sample of 10,000 rows
+    if test:
+        if df.shape[0] > 10000:
+            df = df.sample(n=10000, random_state=42)
+        else:
+            df = df.copy()
 
     if "year" in df.columns:
         for year in sorted(df["year"].dropna().unique()):
@@ -198,3 +270,16 @@ def run_full_ngram_pipeline(input_csv,
         )
 
     print("🏁 N-gram pipeline complete.")
+
+# add scripy run __main__
+
+if __name__ == "__main__":
+    run_full_ngram_pipeline(
+        input_csv="data//preprocessed_wordcloud.zip",
+        output_dir="sl_data_for_dashboard//wordclouds",
+        text_column="text",
+        label_column="label",
+        ngram_range=(1, 3),
+        n_jobs=4,
+        test=True
+        )

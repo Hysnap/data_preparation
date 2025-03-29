@@ -92,7 +92,7 @@ def data_pipeline(useprecombineddata=False,
                     f" {combined_df.columns[combined_df.
                                             columns.duplicated()]}")
         logger.info("Resetting index...")
-        combined_df.reset_index(drop=True, inplace=True)
+        combined_df = combined_df.reset_index(drop=True)
         logger.info("Renaming index to article_id...")
         combined_df['article_id'] = combined_df.index
         combined_df.index.name = 'index'
@@ -103,8 +103,8 @@ def data_pipeline(useprecombineddata=False,
         )
 
         logger.info("Replacing empty sources with 'UNKNOWN (Unknown)'...")
-        combined_df['source'].replace('', 'UNKNOWN (Unknown)', inplace=True)
-        combined_df['source'].fillna('UNKNOWN (Unknown)', inplace=True)
+        combined_df['source'] = combined_df['source'].replace('', 'UNKNOWN (Unknown)')
+        combined_df['source'] = combined_df['source'].fillna('UNKNOWN (Unknown)')
 
         logger.info("Removing excess spaces from all columns...")
         combined_df = (
@@ -152,7 +152,7 @@ def data_pipeline(useprecombineddata=False,
                         f" {combined_df.columns[combined_df.
                             columns.duplicated()]}")
             logger.info("Resetting index...")
-            combined_df.reset_index(drop=True, inplace=True)
+            combined_df = combined_df.reset_index(drop=True)
             logger.info("Renaming index to article_id...")
             combined_df['article_id'] = combined_df.index
             combined_df.index.name = 'index'
@@ -175,7 +175,7 @@ def data_pipeline(useprecombineddata=False,
                             f" {combined_df.columns[combined_df.
                                 columns.duplicated()]}")
                 logger.info("Resetting index...")
-                combined_df.reset_index(drop=True, inplace=True)
+                combined_df = combined_df.reset_index(drop=True)
                 logger.info("Renaming index to article_id...")
                 combined_df['article_id'] = combined_df.index
                 combined_df.index.name = 'index'
@@ -197,7 +197,7 @@ def data_pipeline(useprecombineddata=False,
                             f" {combined_df.columns[combined_df.
                                 columns.duplicated()]}")
                 logger.info("Resetting index...")
-                combined_df.reset_index(drop=True, inplace=True)
+                combined_df = combined_df.reset_index(drop=True)
                 logger.info("Renaming index to article_id...")
                 combined_df['article_id'] = combined_df.index
                 combined_df.index.name = 'index'
@@ -303,11 +303,11 @@ def data_pipeline(useprecombineddata=False,
     combined_df['subject'] = combined_df['subject'].fillna('Unknown')
 
     logger.info("Dropping unnecessary columns...")
-    combined_df.drop([
+    combined_df = combined_df.drop([
                       'nlp_textloc',
                       'source',
                       'location',
-                      'nlp_location'], axis=1, inplace=True)
+                      'nlp_location'], axis=1)
 
     logger.info("Dropping rows with empty cleaned_text...")
     combined_df = combined_df.dropna(subset=['cleaned_text'])

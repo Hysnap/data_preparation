@@ -1,0 +1,7 @@
+### Evaluation Metrics Explanation
+- **Accuracy**: Proportion of correct predictions over total.
+- **Precision**: How many selected items are relevant.
+- **Recall**: How many relevant items are selected.
+- **F1-Score**: Harmonic mean of precision and recall.
+- **MSE** (regression only): Average squared difference between
+                       predicted and actual values.

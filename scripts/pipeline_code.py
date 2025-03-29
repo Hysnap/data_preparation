@@ -29,7 +29,7 @@ nlp = spacy.load("en_core_web_sm")
 def prepare_combined_df(df: pd.DataFrame) -> pd.DataFrame:
     logger.info("Preparing combined dataframe...")
 
-    df.reset_index(drop=True, inplace=True)
+    df = df.reset_index(drop=True)
     df['article_id'] = df.index
     df.index.name = 'index'
 
@@ -38,7 +38,7 @@ def prepare_combined_df(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     df['source'] = df['source'].replace('', 'UNKNOWN (Unknown)')
-    df['source'].fillna('UNKNOWN (Unknown)', inplace=True)
+    df['source'] = df['source'].fillna('UNKNOWN (Unknown)')
 
     for col in df.select_dtypes(include='object').columns:
         df[col] = df[col].str.strip()
@@ -187,6 +187,7 @@ def generate_unique_loc(combined_df,
                 'nlp_textloc',
                 keyword_processor,
                 nlp=nlp,
+                valid_locations_set=location_set
                 )
     else:
         combined_df = extract_locations_column(
@@ -194,6 +195,7 @@ def generate_unique_loc(combined_df,
             'nlp_textloc',
             keyword_processor,
             nlp=nlp,
+            valid_locations_set=location_set
             )
 
     # Create exploded location mapping

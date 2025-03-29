@@ -64,20 +64,35 @@ def extract_locations_column(df,
                              keyword_processor,
                              nlp,
                              useprelocationenricheddata=False,
+                             valid_locations_set=None
                              ):
     df['locationsfromarticle'] = df[text_col].progress_apply(
-        lambda text: extract_locations(str(text), keyword_processor, nlp)
+        lambda text: extract_locations(str(text),
+                                       keyword_processor,
+                                       nlp,
+                                       valid_locations_set
+                                       )
     )
     return df
 
 
 @log_function_call(logger)
-def extract_locations(text, keyword_processor, nlp):
-    text = str(text)
+def extract_locations(text, keyword_processor, nlp, valid_locations_set=None):
+    text = str(text).lower()
     doc = nlp(text)
-    nlp_locations = {ent.text.lower() for ent in doc.ents if ent.label_ == "GPE"}
-    keywords = set(keyword_processor.extract_keywords(text.lower()))
-    return list(keywords if keywords else nlp_locations)
+    nlp_locations = {ent.text.lower()
+                     for ent in doc.ents
+                     if ent.label_ == "GPE"}
+    keywords = set(keyword_processor.extract_keywords(text))
+
+    # combine but filer through known locations
+    combined = keywords | nlp_locations
+    if valid_locations_set:
+        filtered = [loc for loc in combined if loc in valid_locations_set]
+    else:
+        filtered = list(combined)
+        
+    return filtered
 
 
 @log_function_call(logger)
