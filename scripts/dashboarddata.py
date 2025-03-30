@@ -58,6 +58,7 @@ def run_dashboard_data_generation(df):
         8. overall sentiment value
         9. article sentiment value
         10. title sentiment value
+        11. subject
     """
 
     # add count_of_locations
@@ -89,7 +90,7 @@ def run_dashboard_data_generation(df):
         
     # round text_length nearest 100
     #set variable to control rounding
-    textround = -2
+    textround = -1
     df['text_length_value'] = (
         df['text_length'].apply(lambda x: round(x, textround)))
 
@@ -154,6 +155,7 @@ def run_dashboard_data_generation(df):
     # ensure only observerd values are used
     DashBoardData = df.groupby(by=[
         'source_name',
+        'subject',
         'day_of_week',
         'day_label',
         'month',

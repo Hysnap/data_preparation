@@ -29,15 +29,15 @@ from scripts.dashboarddata import run_dashboard_data_generation
 
 # Generate Combined Data and save as a csv file
 flags = {
-    "run_pipeline": False,
+    "run_pipeline": True,
     "useprecombineddata": False,
     "usepostnlpdata": False,
     "useprelocationdata": False,
-    "useprelocationenricheddata": False,
+    "useprelocationenricheddata": True,
     "usesavedfile": False,
-    "usegeoapi": True,
+    "usegeoapi": False,
     "useworldcitiesdata": False,
-    "producedashboarddata": False,
+    "producedashboarddata": True,
     "findcommonthemes": False,
     "runMLmodelgen": False,
     "run_ngam_gen": False,
@@ -66,7 +66,6 @@ if flags.get("run_pipeline"):
     # set month, day and year for null values based off date_clean
     # drop unnecessary columns
     combined_df = combined_df.drop(['article_text',
-                                    'subject',
                                     ], axis=1)
 
     if combined_df.isnull().sum().sum() == 0:
@@ -99,7 +98,6 @@ if flags.get("producedashboarddata"):
         logger.info("Producing dashboard data...")
         # run dashboard data generation
         run_dashboard_data_generation(combined_df)
-        run
         logger.info("Dashboard data generation completed.")
 
 
